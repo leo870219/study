@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        //綁定事件原生寫法
+        class myHead extends React.Component {
+            render() {
+                return React.createElement("H" + this.props.level, {
+                    //在屬性中註冊事件處理器 onlick在React必須寫成onClick
+                    //呼叫bind設定當前的組件，(this)為綁定物件
+                    onClick: this.clickHandler.bind(this)
+                }, "Hello World");
+            }
+
+            clickHandler(e) {   //事件處理器的第一個參數 ，取得Event Object
+                console.log("觸發事件");
+                console.log(this.props);  //this為當前組件 可取得props或state
+            }
+        }
+        class myHead1 extends React.Component {
+            render() {
+                //呼叫bind設定當前的組件，(this)為綁定物件
+                return <div onClick={this.clickHandler.bint(this)}
+                    className={"head-" + this.props.level}>Hello World</div>;
+            }
+            clickHandler(e) {   //事件處理器的第一個參數 ，取得Event Object
+                console.log("觸發事件");
+                console.log(this.props);    //this為當前組件 可取得props或state
+            }
+        }
+
+        //綁定事件JSX寫法+實際演練
+        class MyHead extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { color: "red" };
+            }
+            render() {
+                //呼叫bind設定當前的組件，(this)為綁定物件
+                return <div onClick={this.clickHandler.bind(this)}
+                    onMouseOver={this.mouseOverHandler.bind(this)}
+                    onMouseOut={this.mouseOutHandler.bind(this)}
+                    style={{ color: this.state.color }}
+                    className={"head-" + this.props.level}>Hello World</div>;
+            }
+            clickHandler(e) {
+                //當使用者點及，把顏色換成綠色，這邊可以使用是因為上方onClick綁定組件類別
+                this.setState({ color: "green" })
+            }
+            mouseOverHandler(e) {
+                this.setState({ color: "blue" })
+            }
+            mouseOutHandler(e) {
+                this.setState({ color: "red" })
+            }
+        }
+        window.addEventListener("load", () => {
+            ReactDOM.render(<MyHead level="3" />, document.body)
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

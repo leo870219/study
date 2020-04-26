@@ -1,0 +1,100 @@
+React是由Facebook支援開發，是一種專門開發使用者介面的Javascript套件，主要核心為Componet(組件)，非常容易理解及除錯，未來也可延伸到手機應用。
+
+React最小元件單位為Element，Element又分為兩種
+1.HTML DOM Element
+2.React組件(Component)
+
+組件:自定義的元件
+
+定義一個組件類別
+class 組件類別名 extends React.Component{
+    組件類別內程式碼
+}        
+
+在組件類別中定義render方法
+class 組件類別名 extends React.Component{
+    render(){
+        return React_Element
+    }
+}        
+
+建立組件實體
+React.createElement(
+    組件類別名稱,[屬性],[子元件]
+);
+
+將組件加入畫面中
+React.render(
+    組件實體,容器元件
+)
+
+組件屬性:初始設定，建立後不變動
+組件狀態:預期未來會變動的設定
+
+組件類別的建構式中,初始化狀態
+class 組件類別名 extends React.Component{
+    constructor(props){
+        //一定要先呼叫父類別建構式，可參照ES6子類別建構式寫法
+        super(props);
+        state={data:10};   //初始化狀態物件
+    }
+}   
+
+更新狀態
+setState(新的組件狀態);
+
+更新狀態，與目前狀態有關連
+setState((目前狀態,目前屬性)=>(新的狀態));
+這是箭頭函式(參數一,參數二)=>(回傳值);
+
+!!!!!更新狀態會自動呼叫render()重繪畫面!!!!!
+
+組件的重要操作
+新增組件
+更新組件
+刪除組件
+
+建立組件:依照順序執行以下方法
+1.constructor();
+2.ComponentWillMount();
+3.render();
+4.ComponentDidMount();
+
+更新組件:依照順序執行以下方法
+1.ComponentWillUpdate();
+2.render();
+3.ComponentDidUpdate();
+
+刪除組件:依照順序執行以下方法
+1.ComponentWillUnmount();
+
+上述方法全部存在於React.Component父類別中，可以在組件類別中覆寫方法，自訂邏輯
+
+JSX:在JS類似HTML標籤的語法，取代React.createElement方法
+JSX用途:方便產生React Element
+柳覽器並不支援JSX寫法，必須使用Babel編譯器轉換成與瀏覽器相容的模式
+
+在JSX中使用{JS程式}結合動態資料
+雖然JSX表面上看起來是HTML標籤，但實際上更接近JS，因為他是由React.createElement而來
+
+JSX套用CSS樣式
+1.透過className進行樣式設定
+2.行內元素可直接使用style{{css樣式:樣式內容}}
+
+React.createElement 事件處理
+EventHandler.html範例檔
+
+使用onSubmit事件處理表單
+使用state紀錄輸入元件中的資料
+使用onChange追蹤輸入元件的資料變更
+使用value屬性表達textarea(多行輸入框)的輸入
+使用value屬性表達select的輸入
+
+程式碼分工:每段程式碼都有一個自己的責任，在設計程式碼時需想清楚每段程式碼到底在做甚麼
+應用程式；由下方三個部分組成
+1.使用者介面
+2.狀態管理:使用者操作時會動態變化的東西
+3.資料管理:讀取檔案、儲存檔案等等
+
+應用程式設計核心流程
+使用者操作=>狀態變化=>介面變化

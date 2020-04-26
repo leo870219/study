@@ -1,0 +1,74 @@
+塊級元素                                                                    行內元素
+
+<address>                                                                   <a>
+<article>                                                                   <abbr>
+<aside>                                                                     <acronym>
+<blockquote>                                                                <audio>
+<canvas>                                                                    <b>
+<dd>                                                                        <bdi>
+<div>                                                                       <bdo>
+<dl>                                                                        <big>
+<dt>                                                                        <br>
+<fieldset>                                                                  <i>                   
+<figcaption>                                                                <iframe>                                                   
+<figure>                                                                    <img>                               
+<footer>                                                                    <input>   
+<form>                                                                      <ins>                                                                                                         
+<h1>, <h2>, <h3>, <h4>, <h5>,<h6>                                           <kbd>                       
+<header>                                                                    <label>
+<hgroup>                                                                    <map>           
+<hr>                                                                        <mark>                                   
+<li>                                                                        <meter>                       
+<main>                                                                      <noscript>                               
+<nav>                                                                       <object>                                                           
+<noscript>                                                                  <output>                                                           
+<ol>                                                                        <picture>                               
+<output>                                                                    <progress>                                                       
+<p>                                                                         <q>                               
+<pre>                                                                       <ruby>                                           
+<section>                                                                   <s>                                       
+<table>                                                                     <samp>                                       
+<tfoot>                                                                     <script>                               
+<ul>                                                                        <select>                                           
+<video>                                                                     <slot>                                       
+                                                                            <small>
+                                                                            <span>
+                                                                            <strong>
+                                                                            <sub>
+                                                                            <sup>
+                                                                            <svg>
+                                                                            <template>
+                                                                            <textarea>
+                                                                            <time>
+                                                                            <u>
+                                                                            <tt>
+                                                                            <var>
+                                                                            <video>
+                                                                            <wbr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //操作流程講解範例
+        function getdata(callback) {
+            //2.準備Ajax連線
+            let req = new XMLHttpRequest()
+            req.open("get", "https://training.pada-x.com/resources/javascript-es6-react/data.out")
+            req.onload = function () {
+                //5.等待一段時間後，子程式完成連線，觸發主程式的load事件，取得資料
+                //6.呼叫callback，即透過參數callback傳入的showData函式
+                callback(this.responseText);
+            };
+            req.send(); //3.送出連線，建立子程式進行非同步處理
+            //4.主程式立刻結束函式，回傳undefined
+        }
+        function showdata(result) {
+            alert(result);
+        }
+        getdata(showdata);  //1.呼叫取資料用的函式，並將showData函式透過參數傳入
+
+        //實際演練
+        function getData(callback) {
+            let req = new XMLHttpRequest()
+            req.open("get", "https://training.pada-x.com/resources/javascript-es6-react/data.out")
+            req.onload = function () {
+                console.log(callback);
+                callback(this.responseText);
+                console.log(this.responseText);
+            };
+            req.send();
+        }
+        getData(function (result) {
+            alert(result);
+        });
+
+
+    </script>
+</body>
+
+</html>

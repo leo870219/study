@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //子類別範例
+        //定義一個類別
+        class Car {
+            constructor() {
+                console.log("執行父類別建構式，產生基本car物件");
+            }
+        }
+        //定義子類別
+        class ElectricCar extends Car {
+            constructor() {
+                super();//呼叫父類別建構式
+                console.log("繼續執行子類別建構式，衍伸出ElectricCar物件");
+            }
+        }
+        //產生子類別物件
+        let car1 = new ElectricCar();
+
+        //加入color屬性
+        //定義一個類別
+        class car {
+            constructor(color) {
+                this.color = color;   //在父類別中定義color屬性
+            }
+        }
+        //定義子類別
+        class Electriccar extends car {
+            constructor(color) {
+                super(color);//呼叫父類別建構式
+            }
+        }
+        //產生子類別物件
+        let car2 = new Electriccar("green");
+        console.log("my car color is " + car2.color); //子類別物件同樣擁有父類別物件中定義的屬性
+
+        //加入run方法
+        //定義一個類別
+        class CAR {
+            constructor(color) { this.color = color; }   //在父類別中定義color屬性
+            run() {
+                console.log("Car " + this.color + " is running")
+            }
+        }
+        //定義子類別
+        class ElectricCAR extends CAR {
+            constructor(color) {
+                super(color);//呼叫父類別建構式
+            }
+        }
+        //產生子類別物件
+        let car3 = new ElectricCAR("green");
+        car3.run(); //子類別物件同樣擁有父類別物件中定義的方法
+
+        //加入衍伸的子類別方法
+        //定義一個類別
+        class CAr {
+            constructor(color) { this.color = color; }   //在父類別中定義color屬性
+            run() {
+                console.log("Car " + this.color + " is running")
+            }
+        }
+        //定義子類別
+        class ElectricCAr extends CAr {
+            constructor(color) {
+                super(color);//呼叫父類別建構式
+                this.battery = 100;
+            }
+            run(distance) {  //在子類別中定義run方法，覆蓋/取代父類別中的同名方法
+                this.battery -= distance;
+                console.log("Car " + this.color + " is running " + distance + "KM")
+            }
+            charge() {   //子類別中定義專屬的charge方法
+                this.battery = 100;
+            }
+
+        }
+        //產生子類別物件
+        let car4 = new ElectricCAr("green");
+        car4.run(10);   //使用子類別中定義的方法
+        console.log("目前電量" + car4.battery);  //使用子類別中定義的屬性
+        car4.charge();
+        console.log("目前電量" + car4.battery);  //使用子類別中定義的屬性
+
+        //原型鏈範例
+        //定義一個類別
+        class cAR {
+            constructor(color) { this.color = color; }
+            run() { }
+        }
+        //產生類別物件
+        let car5 = new cAR("green");
+        //取得並將原型物件顯示出來
+        let car5Proto = Object.getPrototypeOf(car5);    //Car原型物件
+        console.log(car5Proto);
+        let objProto = Object.getPrototypeOf(car5Proto);    //Object原型物件
+        console.log(objProto);
+        let lastOne = Object.getPrototypeOf(objProto);  //原型鏈終點:null
+        console.log(lastOne);
+
+        //直接在物件實體定義方法及屬性範例
+        //定義一個類別
+        class caR {
+            constructor(color) { this.color = color; }
+            run() { }
+        }
+        class ElectriccaR extends caR {
+            constructor(color) {
+                super(color);this.battery=100;}
+                run(distance){}
+                charge(){}
+        }
+        //產生類別物件
+        let car6 = new cAR("green");
+        //在務舔上直接建立方法及屬性
+       car6.name="阿憲的車";
+       car6.test=function(){
+           console.log("建立物件後，在物件實體上新增方法");
+           console.log(this.name);  //印出:阿憲的車
+       }
+       car6.test();
+
+       //定義及呼叫靜態方法範例
+       //定義一個類別
+       class cAr{
+        constructor(color) { this.color = color; }
+        run(){console.log("Car "+this.color+" running");}
+        static showColor(){ //定義一個靜態方法
+            console.log("We support three colors: blue, red, green.")
+        }
+       }
+       //直接使用類別名稱，呼叫靜態方法
+       cAr.showColor();
+       let car7=new cAr("green");   //建立一個物件實體
+       car7.run();  //使用物件實體呼叫物件的方法run()
+
+       /*錯誤呼叫範例
+       cAr.run();   //錯誤的程式，run非靜態方法，必須由物件實體呼叫
+       car7.showColor();    //錯誤的程式，showColor為靜態方法，必須由類別名稱呼叫
+       */
+
+       //非同步程示範例
+       //時間排程是一個[非同步的程式]
+       //主程式設定排程後，交由[背景子程式]負責監控時間
+       window.setTimeout(function(){    //此為回呼函式
+            //兩秒後，[背景子程式]喚醒主程式，執行此函式
+           alert("兩秒後執行");
+       },2000)
+       //主程式設定排程後，立刻往下執行
+       alert("立刻被呼叫");
+       //主程式結束，暫時沒事做
+
+       //Ajax預設是一個[非同步的程式]
+       let req=new XMLHttpRequest();
+       req.open("get","data.txt");
+       req.onload=function(){
+            //連線完成後，[背景子程式]觸發[主程式]的load事件處理函式
+           alert(this.responseText);
+       };
+       //主程式送出連線後，交由[背景主程式]負責處理連線細節
+       req.send();
+       //主程式送出連線，立刻往下執行
+       alert("立刻被呼叫");
+       //主程式結束，暫時沒事做
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //傳統函式寫法
+        let a = function (n1, n2) {
+            return n1 + n2;
+        };
+        console.log(a(2, 3));
+
+        //箭頭函式寫法
+        let b = (n1, n2) => (n1 + n2);
+        console.log(b(2, 3));
+
+        //箭頭函式範例1
+        let c = () => (5);
+        let result = c();
+        console.log(result);
+
+        //箭頭函式範例2
+        let d = (message) => {
+            console.log(message);
+        };
+        d("Hello Arrow Function");
+
+        //在排程中使用傳統的方式撰寫匿名函式
+        setTimeout(function () {
+            console.log("過了一秒鐘");
+        }, 1000);
+
+        //在排程中使用箭頭函式撰寫匿名函式
+        setTimeout(() => {
+            console.log("過了一秒鐘");
+        }, 1000);
+
+        //傳統的方式給定預設值
+        function e(message) {
+            if (typeof message === "undefined") {
+                message = "預設值";
+            }
+            console.log(message);
+        }
+        e("Hello");
+        e();
+
+        //ES6給定預設值
+        let f = (message = "預設值") => {
+            console.log(message);
+        }
+        f("Hello");
+        f();
+
+        //預設值範例1 傳統方式
+        function multiply(n1, n2 = 1) {
+            console.log(n1 * n2);
+        }
+        multiply(3, 4);
+        multiply(5)
+
+        //預設值範例1 箭頭函式
+        let multiply2 = (n1, n2 = 1) => {
+            console.log(n1 * n2);
+        }
+        multiply2(3, 4);
+        multiply2(5)
+
+        //預設值範例2 傳統方式
+        function user(first = "Leo", last = "Wang", name = first + " " + last) {
+            console.log(name);
+        }
+        user("Sandy", "Yang");
+        user("Sandy");
+        user();
+
+        //預設值範例2 箭頭函式
+        let user1 = (first = "Leo", last = "Wang", name = first + " " + last) => {
+            console.log(name);
+        }
+        user("Sandy", "Yang");
+        user("Sandy");
+        user();
+
+        //定義一個類別
+        class Car {
+            //在類別中，定義建構式
+            constructor() {
+                console.log("建構式被呼叫")
+            }
+        }
+
+        //依照定義好的類別產生新物件實體
+        let car1 = new Car();  //呼叫建構式，產生新物件
+        let car2 = new Car();  //呼叫建構式，產生新物件
+
+        //定義一個類別
+        class car {
+            //建立新屬性，資料透過參數，在建立物件時提供彈性
+            constructor(color) {
+                this.color = color;
+            }
+        }
+
+        //依照定義好的類別產生新物件實體
+        let car3 = new car("blue");  //新物件擁有color屬性
+        let car4 = new car("green");  //新物件擁有color屬性
+
+        //定義一個類別
+        class CAr {
+            //建立新屬性，資料透過參數，在建立物件時提供彈性
+            constructor(color) {
+                this.color = color;
+            }
+        }
+
+        //依照定義好的類別產生新物件實體
+        let car5 = new CAr("blue");  //新物件擁有color屬性，資料為blue
+        console.log(car5.color);  //取得屬性資料，印出"blue"
+        car5.color = "red";   //更新屬性資料
+        console.log(car5.color);    //取得新的屬性資料，印出"blue"
+
+        //定義一個類別
+        class CAR {
+            //建立新屬性，資料透過參數，在建立物件時提供彈性
+            constructor(color) {
+                this.color = color;
+            }
+            //定義一個run方法，透過物件呼叫，並執行內部程式碼
+            run() {
+                console.log("Car " + this.color + " Running")
+            }
+        }
+
+        //依照定義好的類別產生新物件實體
+        let car6 = new CAR("blue");  //新物件擁有color屬性，與run方法
+        car6.run(); //呼叫run方法，執行run內部程式，印出"Running"
+
+        //物件屬性、方法的綜合操作
+        class CaR {
+            constructor(color) {
+                this.color = color;
+                this.speed=0;   //車子的初始速度為0
+            }
+            run(speed){
+                this.speed=speed;
+                console.log("Car "+this.color+" Running at" + this.speed +"KM/HR")
+            }
+            stop(){
+                this.speed=0;   //更新車子速度
+                console.log("Car " +this.color + " Stopped");
+            }
+        }
+        let car7=new CaR("blue");   //新物件擁有color，speed屬性，與run，stop方法
+        car7.run(50);   //呼叫run方法，印出"Car blue Running at50KM/HR"
+        car7.stop();    //呼叫stop方法，印出"Car blueStopped"
+    </script>
+</body>
+
+</html>

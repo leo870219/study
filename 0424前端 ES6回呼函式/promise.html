@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getData() {
+            return new Promise(function (resolve, reject) {
+                let req = new XMLHttpRequest();
+                req.open("get", "https://training.pada-x.com/resources/javascript-es6-react/data.out")
+                //如何將連線後得到的資料 this.responseText串接到流程
+                req.onload = function () {
+                    resolve(this.responseText)
+                }
+                req.onerror = function () {
+                    reject("Error");   //失敗時做出報告
+                }
+                req.send();
+            })
+        }
+        //這是主流程
+        let dataPromise = getData();   //嘗試從網路取得資料
+        dataPromise.then(function (result) { alert(result); },   //這是可以從參數result，正確取得連線後的資料
+            function (error) {
+                alert(error);
+            }
+        );
+
+        //失敗時使用catch範例
+        function getData() {
+            return new Promise(function (resolve, reject) {
+                let req = new XMLHttpRequest();
+                req.open("get", "https://training.pada-x.com/resources/javascript-es6-react/data.out")
+                //如何將連線後得到的資料 this.responseText串接到流程
+                req.onload = function () {
+                    resolve(this.responseText)  //呼叫resolve並將取得值作為參數傳到then的function(result)的result中
+                }
+                req.onerror = function () {
+                    reject("Error");   //失敗時做出報告
+                    //呼叫reject，將Error為參數傳到then的function(error)的error中
+                }
+                req.send();
+            })
+        }
+        //這是主程式
+        /*可當成一個故事看，我想要跟伺服器要資料，但要資料需要一點時間，
+          所以先給你承諾(promise物件)，承諾實現後可以去做後續的動作(執行成功函式)
+          ，或承諾失敗時要做甚麼處理(執行失敗函式)
+        */
+        let DataPromise = getData();   //嘗試從網路取得資料
+        DataPromise.then(function (result) {
+            alert(result);  //這是可以從參數result，正確取得連線後的資料
+        }).catch(function (error) {
+            //這是可以從參數error，取得失敗後的處理
+            alert(error);
+        });
+    </script>
+</body>
+
+</html>

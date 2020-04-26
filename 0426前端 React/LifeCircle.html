@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script>
+
+        class myHead extends React.Component {
+            render() {
+                return React.createElement("H" + this.props.level, null, "Hello World");
+            }
+        }
+        class myHeadList extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {maxlevel: this.props.start};
+            }
+            componentWillMount() {  //組件將要繪製前的時刻，設定排成才有動態效果出現
+                this.intervalId=window.setInterval(() => {
+                    this.setState((currentState, currentProps) => {
+                        if(currentState.maxlevel<currentProps.end+1){
+                         return { maxlevel: currentState.maxlevel + 1 }; 
+                         }});
+                }, 1000);
+            };
+            componentUnmount(){ //組建將要刪除前的時刻，在離開畫面前需要將排程清除，否則會不斷執行這個排程
+                window.clearInterval(this.intervalId);
+            }
+            render() {
+                let heads = [];
+                let head;
+                for (let i =this.props.start; i < this.state.maxlevel; i++) {
+                    head = React.createElement(myHead, { level: i });
+                    heads.push(head);
+                }
+                return React.createElement("div", null, heads)
+            }
+        }
+        window.addEventListener("load", () => {
+            let myComponent = React.createElement(myHeadList, {start:1,end:3});
+            ReactDOM.render(myComponent, document.body)
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

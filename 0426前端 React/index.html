@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script>
+
+        class myHead extends React.Component {
+            render() {
+                return React.createElement("H" + this.props.level, null, "Hello World");
+            }
+        }
+        class myHeadList extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = { maxlevel: 4 };
+                window.setTimeout(() => {
+                    //更新狀態範例
+                    this.setState({ maxlevel: 7 });
+                    //更新狀態，與目前狀態有關連範例
+                    this.setState((currentState, currentProps) => ({ maxlevel: currentState.maxlevel - 4 }));
+                }, 2000);
+            }
+            render() {
+                let heads = [];
+                let head;
+                for (let i = 1; i < this.state.maxlevel; i++) {
+                    head = React.createElement(myHead, { level: i });
+                    heads.push(head);
+                }
+                return React.createElement("div", null, heads)
+            }
+        }
+        window.addEventListener("load", () => {
+            let myComponent = React.createElement(myHeadList, null);
+            ReactDOM.render(myComponent, document.body)
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

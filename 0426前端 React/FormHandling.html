@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React表單處理</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        class MyForm extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    name: "",
+                    introduction: "",
+                    sex: "male"
+                };   //初始化 state 紀錄單行輸入框的資料
+            }
+            render() {
+                //在單行輸入框中設定value屬性，讓介面反應資料變更
+                return <form onSubmit={this.handleSubmit.bind(this)}>
+                    <p>請輸入姓名</p><input type="text" value={this.state.name}
+                        onChange={this.handleTextChange.bind(this)} required="required"/><br />
+                    <p>請自我介紹</p><textarea type="text" value={this.state.introduction}
+                        onChange={this.handleTextareaChange.bind(this)} required="required"/><br />
+                    <p>請選擇性別</p><select value={this.state.sex}
+                        onChange={this.handleSelectChange.bind(this)}required="required">
+                        <option value="male">男</option><option value="female">女</option>
+                    </select>
+                    <br /><br />
+                    <input type="submit" value="Submit" />
+                    <p>{this.state.name}</p>
+                    <p>{this.state.introduction}</p>
+                    <p id="sex">{this.state.sex == "male" ? "男" : "女"}</p>
+                </form>;
+            }
+            handleSubmit(e) {
+                let sex = this.state.sex == "male" ? "男" : "女";
+                e.preventDefault(); //可停止瀏覽器預設的表單處理動作
+                alert("資料送出成功");    //使用者點擊Submit送出表單後，在此進行處理
+                console.log("姓名 " + this.state.name);
+                console.log("自我介紹 " + this.state.introduction);
+                console.log("性別 " + sex);
+            }
+            handleTextChange(e) {
+                //e.currentTarget可以取得觸發事件的HTML Element
+                this.setState({ name: e.currentTarget.value });
+            }
+            handleTextareaChange(e) {
+                this.setState({ introduction: e.currentTarget.value });
+            }
+            handleSelectChange(e) {
+                this.setState({ sex: e.currentTarget.value });
+            }
+        }
+        window.addEventListener("load", () => {
+            ReactDOM.render(<MyForm />, document.body);
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style type="text/css">
+        .head {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/babel">
+        class MyHead extends React.Component {
+            render() {
+                /*原生寫法 return React.createElement("div", className:"head", 
+                    "Hello World"+this.props.level);*/
+                //JSX寫法
+                return <div className="head" style={{color:this.props.color}}>Hello World{this.props.level}</div>;
+            }
+        }
+        class MyHeadList extends React.Component {
+            render() {
+                return <div>
+                    <MyHead level="1" color="red"/>
+                    <MyHead level="2" color="green"/>
+                    <MyHead level="3" color="blue"/>
+                </div>
+            }
+        }
+        window.addEventListener("load", () => {
+            //取代React.createElement(Myhead{level:3});
+            ReactDOM.render(<MyHeadList />, document.body);
+        });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
