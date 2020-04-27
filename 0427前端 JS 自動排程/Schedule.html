@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        init = () => {
+            let timer = document.getElementById("timer");
+            window.setInterval(countdown = () => { if (timer.innerHTML > 0) { timer.innerHTML-- } }, 1000);
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <span id="timer">3</span>
+</body>
+
+</html>

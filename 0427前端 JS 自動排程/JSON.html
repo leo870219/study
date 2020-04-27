@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let json = {
+            "a": 1,
+            "b": 2,
+            "sayhi": () => {
+                alert("Hi!")
+            }
+        };
+        var jsonToStr=JSON.stringify(json);
+        console.log(jsonToStr);
+        var stroJSON=JSON.parse(jsonToStr);
+        console.log(stroJSON);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

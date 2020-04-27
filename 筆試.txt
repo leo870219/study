@@ -1,0 +1,32 @@
+自動排程(Schedule)
+setTimeout 執行一次就停下來
+setInterval 每秒執行一次
+
+JSON:Javascript Object Notation (Javascript 物件表示法)
+將JSON格式轉為字串，將物件轉換成JSON格式的字串，但會忽略函式
+JSON.stringify(JSON物件)
+
+將字串轉為JSON格式，將字串轉成物件結構
+JSON.parse(要轉變的字串)
+
+Flexbox
+display:none;無彈性
+display:auto;有彈性的自動填滿
+
+垂直置中
+align-items-center
+垂直置頂(預設)
+align-items-start
+垂直置底
+align-items-end
+
+水平置中
+justify-content-center
+水平靠左(預設)
+justify-content-start
+水平靠右
+justify-content-end
+水平靠左右
+justify-content-between
+水平左右平分置中
+justify-content-around

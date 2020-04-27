@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主頁</title>
+    <script>
+        init = () => {
+            let popular = document.getElementById("popular");
+            let latest = document.getElementById("latest");
+            popular.addEventListener("click", () => { getData('popular.html') });
+            latest.addEventListener("click", () => { getData('latest.html') });
+        }
+        getData = (pageName) => {
+            //XMLHttpRequest 物件，專門用來與伺服器做連線
+            let req = new XMLHttpRequest();
+            //使用open做連線設定，但尚未送出
+            req.open("get", "http://127.0.0.1/html/%E8%87%AA%E5%AD%B8/0427%E5%89%8D%E7%AB%AF%20JS%20%E8%87%AA%E5%8B%95%E6%8E%92%E7%A8%8B/AJAX/" + pageName);
+            //load事件，偵測連線的狀態結束
+            req.onload = function () {
+                let content = document.getElementById("content");
+                //連線完成，做連線完的處理
+                content.innerHTML = this.responseText;
+            };
+            //使用send送出
+            req.send();
+        }
+
+    </script>
+</head>
+
+<body onload="init()">
+    <div>
+        <span id="popular">熱門</span>
+        <span id="latest">最新</span>
+    </div>
+    <hr>
+    <div id="content"></div>
+</body>
+
+</html>
