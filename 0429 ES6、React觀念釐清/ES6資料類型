@@ -1,0 +1,45 @@
+資料類型(值)
+
+主要的原始資料類型:
+數字(Number/難波/)
+字串(String/斯翠/)
+布林(Boolean/布林/)
+特殊的原始資料類型:
+空(null/怒偶/)
+未定義(undefined/昴滴犯/)
+符號(Symbol/辛波/)
+複合型(composite)或參考型(reference)的資料類型:
+陣列(Array/額瑞/)
+物件(Object/阿捷特/)
+
+註: 所謂的"原始資料類型"，指的是在程式語言中，最低階的一種資料類型，不屬於物件也沒有方法。它也具有不可改變的(immutable)特性。
+不過，JavaScript語言中也存在名稱為String、Number、Boolean的物件，用來對應原始資料類型，它們是一種包裝物件(wrapper object)，
+提供了原始資料類型可以使用的一些延申的屬性與方法。
+
+註: JavaScript的確是一個物件導向的程式語言。不過，JavaScript中的物件導向特性與其他目前
+所流行的物件導向語言例如Java、C++等有很大的不同。
+
+鬆散資料類型
+JavaScript是一個鬆散資料類型(loosely typed)的程式語言，或稱之為"動態的程式語言(dynamic language)"。
+意思是說你不需要為變數/常數在定義時，就規定要使用哪一種的資料類型。取而代之的是，只需要指定它的值，JavaScript會依照你所指定的值決定變數/常數的資料類型。
+let foo = 42    // foo現在是Number資料類型
+let foo = 'bar' // foo現在是String資料類型
+let foo = true // foo現在是Boolean資料類型
+
+判斷資料型別使用:typeof
+
+電腦中的程式語言在數學上的運算，總會有超出儲存的極限與無法處理的情況。JavaScript使用三個特殊的記號，來代表在數字上處理的極限值或非數字的情況，但它們都屬於數字資料類型:
++Infinity/硬飛了踢/: 正無限值(相當於Infinity)
+-Infinity: 負無限值
+NaN: 代表不是數字
+
+在JavaScript中數字的最大與最小值，可以使用Number.MAX_VALUE與Number.MIN_VALUE獲得。
+
+浮點數轉整數
+const floatValue = 10.55
+const intValueOne = Math.floor( floatValue ) //地板值 10
+const intValueTwo = Math.ceil( floatValue ) //天花板值 11
+const intValueThree = Math.round( floatValue ) //四捨五入值 11
+
+在JS程式碼中建議字串使用單引號標記('')，主要原因是JavaScript經常需要與HTML碼搭配使用，而HTML碼中也會使用引號來作為標記屬性值的定義，
+所以讓HTML屬性再用雙引號標記("")

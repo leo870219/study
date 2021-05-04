@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    window.onload = fruitsFavorite;
+    function fruitsFavorite(){
+        let fruits = ['Apple', 'Banana', 'Pineapple', 'Orange', 'Mango'];
+        let favorite = fruits.slice(-3,-1);
+        root.addEventListener("click", () => { document.getElementById("root").innerHTML = favorite }, false);
+    }
+    
+</script>
+
+<body>
+    <p id="root">請按我</p>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+PullRequest流程:
+1、fork別人的repositories
+2、從遠端clone下來本地端修改
+3、修改完push到遠端
+4、發Pull Request並打上詳細修改讓對方知道
+
+Github Flow:
+1、任何開發功能都是先從master拉新分支
+2、開始開發功能
+3、開發完成發pull request申請合併
+4、討論與檢視程式碼
+5、確認沒問題，進行合併

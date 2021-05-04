@@ -1,0 +1,14 @@
+https://richardartoul.github.io/jekyll/update/2015/04/26/hidden-classes.html
+隱藏類及內聯緩存
+優化要點
+1.始終以相同的順序實例化對象屬性，以便可以共享隱藏的類以及隨後優化的代碼。
+2.在實例化後向對象添加屬性將強制更改隱藏的類，並減慢為上一個隱藏的類優化的所有方法。而是在其構造函數中分配對象的所有屬性。
+3.重複執行相同方法的代碼將比僅執行許多不同方法一次的代碼（由於內聯緩存）運行得更快。
+
+https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html
+JS中執行函式會先放到Call Stack(執行堆疊)中，若該函式執行return，將會從堆疊最上方抽離，採先進後出
+若是無窮迴圈，堆疊（Stack）將會不斷被疊加上去，直到瀏覽器出現錯誤
+當執行程式碼片段需要等待很長一段時間，或好像「卡住」的這種現象，被稱作阻塞（blocking），EX:使用同步請求API
+我們之所以可以在瀏覽器中同時（concurrently）處理多個事情，是因為瀏覽器並非只是一個 JavaScript Runtime。
+任何非同步的程式都會先丟到瀏覽器提供的WebAPIs，如得到回應則放到task queue(工作佇列)中，event loop檢查call stack中是否為空，
+如果是就將task queue中的程式丟到call stack中執行。

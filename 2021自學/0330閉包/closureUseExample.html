@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="number">1</p>
+    <button id="increment">+</button>
+    <button id="uncrement">-</button>
+    <script>
+      var counter = function () {
+        var number = 0;
+        function changeNumber(action) {
+          number += action;
+        }
+        return {
+          increment: function () {
+            changeNumber(1);
+          },
+          uncrement: function () {
+            changeNumber(-1);
+          },
+          value: function () {
+            return number;
+          },
+        };
+      };
+      var counter1 = counter();
+      document.getElementById("increment").onclick = function () {
+        counter1.increment();
+        document.getElementById("number").innerHTML = counter1.value();
+      };
+      document.getElementById("uncrement").onclick = function () {
+        counter1.uncrement();
+        document.getElementById("number").innerHTML = counter1.value();
+      };
+      document.getElementById("number").innerHTML = counter1.value();
+    </script>
+  </body>
+</html>

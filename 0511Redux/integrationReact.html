@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js"></script>
+    <title>Document</title>
+    <script type="text/babel">
+        class MyHead extends React.Component {
+            constructor(props) {
+                super(props);
+
+            }
+            render() {
+                return <li>Hello World {this.props.level}</li>;
+            }
+        }
+        class MyHeadList extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = store.getState();
+            }
+            render() {
+                let cells = [];
+                for (let i = 0; i < this.state.max; i++) {
+                    cells.push(<MyHead level={i} />);
+                }
+                return <ul onClick={this.update.bind(this)}>{cells}</ul>;
+            }
+            update() {
+                store.dispatch({
+                    //命令Redux更新狀態
+                    type: 'ChangeMax',
+                    max: store.getState().max+1
+                });
+            }
+            //以下程式用來連接React和Redux
+            refresh() {
+                //串接Redux的狀態改變，並且觸發React組件的更新
+                this.setState(store.getState());
+            }
+            componentDidMount() {
+                //當Redux的狀態有所變化，會通知/呼叫refresh方法
+                this.unsubscribe = store.subscribe(this.refresh.bind(this));
+            }
+            componentWillUnMount() {
+                //清除連接點
+                this.unsubscribe();
+            }
+        }
+        //以下Redux程式
+        let store;
+        let reducer = (state, action) => {
+            //根據action 的type 來執行狀態更新的動作
+            switch (action.type) {
+                case "ChangeMax":
+                    return { max: action.max };
+                default:
+                    return state;
+            }
+        };
+        window.addEventListener('load', () => {
+            //初始化Redux儲存空間
+            store = Redux.createStore(reducer, { max: 3 });
+            //初始化React的畫面
+            ReactDOM.render(<MyHeadList />, document.body)
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

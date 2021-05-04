@@ -1,0 +1,23 @@
+React特色
+用純JS在前端產生HTML(一般來說是在後端產生HTML送到前端)。
+使用Virtual DOM，每次重新繪製時效率高。
+可自定義Component(元件)，方便開發。
+父和子元件可透過props通訊
+只負責MVC的View部分
+完全是JS操作UI，使得可以跟後端分離，達到即時互動、自動更新的效果。
+只是一個JS函式庫，所以容量小。
+容易維護
+
+資料來源:https://ithelp.ithome.com.tw/articles/10210221?sc=iThelpR
+
+props是React父元件與子元件間的溝通橋樑，可以看成是個靜態的物件，
+運作的方式是在父元件給props的值並傳給子元件，然後在子元件讀取，
+每當父元件傳送props給子元件都會造成子元件重繪
+
+states是元件的內部狀態，可以被改變，主要用來記錄自身狀態，不過它跟一般的變數不同，如果你要修改它就必須用setState這個方法
+
+通常一個元件是透過繼承Component來建構，一個class就是一個元件。
+而用function的元件寫法:一個function就是一個元件，可以和之前練習一樣，透過來使用該元件，兩者不同的是函數式元件只能接受props，
+無法像類元件一樣可以在constructor裡面初始化state。函數式元件(無狀態元件)就是一種只能接受props和提供render方法的類元件。
+
+資料來源:https://ithelp.ithome.com.tw/articles/10193775?sc=iThelpR

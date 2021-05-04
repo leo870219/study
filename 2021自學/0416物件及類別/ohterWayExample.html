@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //使用 Object() 建構子建立新的物件，將一組物件實字傳送給 Object() 建構子作為參數。
+      var person1 = new Object({
+        name: "Chris",
+        age: 38,
+        greeting: function () {
+          alert("Hi! I'm " + this.name + ".");
+        },
+      });
+
+      //使用 create() 函式，根據現有物件，建立新的物件。
+      //create() 的其中一個限制，就是 IE8 並不支援。因此，如果你需要支援舊版瀏覽器，建構子會比較有用。
+      var person2 = Object.create(person1);
+      person2.name = 'Leo';
+      person2.greeting();
+    </script>
+  </body>
+</html>

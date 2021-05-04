@@ -1,0 +1,16 @@
+cookie 是在瀏覽器端一個儲存少量資料的空間。當瀏覽器與server 互動時 cookie 就會隨著 http request / response 來回傳送
+例如： 廣告追蹤、身份驗證、購物車。
+大小限制:4kb
+
+SessionStorage
+跟 LocalStorage 只差在生命週期的不同
+
+生命週期： 只儲存在瀏覽器同一個分頁還開啟著的狀態下，把分頁關掉、到另一個分頁就沒有作用了。
+因為不同分頁是不能共享 SessionStorage，所以通常拿來儲存更短期的資訊。
+
+LocalStorage
+最推薦也最簡單的資料儲存方法
+生命週期：沒有過期時間，除非手動刪除
+意思是說關掉分頁、關掉瀏覽器再打開也都還在。
+不像 Cookie 會隨著 Request 送到 Server 端，Storage 只作用在 Client 端瀏覽器
+適合儲存較複雜且不敏感的資料 ( 喜好設定、顏色樣式等等 )

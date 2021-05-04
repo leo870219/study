@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>根據類別以建構式產生新物件</title>
+  </head>
+
+  <body>
+    <p>
+      This example requires you to enter commands in your browser's JavaScript
+      console (see
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools"
+        >What are browser developer tools</a
+      >
+      for more information).
+    </p>
+  </body>
+
+  <script>
+    //建構子函式名稱往往以大寫字母起頭，如此可方便你在程式碼中找出建構子函式。
+    //建構子也就是JavaScript 版本的「類別」之一。
+    function Person(first, last, age, gender, interests) {
+      this.name = {
+        first,
+        last,
+      };
+      this.age = age;
+      this.gender = gender;
+      this.interests = interests;
+      this.bio = function () {
+        let string = ` ${this.name.first} ${this.name.last} is ${this.age} years old.`;
+        if (this.gender === "male") {
+          string += "He likes ";
+        } else if (this.gender === "female") {
+          string += "She likes ";
+        } else {
+          string += "They likes ";
+        }
+        for (let i = 0; i < this.interests.length; i++) {
+          if (i === this.interests.length - 1) {
+            string += `${this.interests[i]}.`;
+          } else {
+            string += `${this.interests[i]},`;
+          }
+        }
+        alert(string)
+      };
+      this.greeting = function () {
+        alert("Hi! I'm " + this.name.first + ".");
+      };
+    }
+    var person1 = new Person("Bob", "Smith", 32, "male", ["music", "skiing"]);
+  </script>
+</html>

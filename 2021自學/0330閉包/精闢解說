@@ -1,0 +1,9 @@
+在JS中，語彙範疇使得函式內部可自動調用在函式外部聲明的變數，但外部不能直接調用內部變數，因此產生閉包，而閉包主要用來儲存數據
+、避免全域汙染、創建函式工廠，及模擬私有化方法。
+
+閉包:https://ithelp.ithome.com.tw/articles/10208752
+this:https://ithelp.ithome.com.tw/articles/10208958
+ajax/跨網域請求:https://blog.techbridge.cc/2017/05/20/api-ajax-cors-and-jsonp/
+event loop:https://medium.com/infinitegamer/why-event-loop-exist-e8ac9d287044
+聲明式( declaration ) vs 陳述式 ( expression ):
+https://medium.com/@unick.zhow/%E8%81%B2%E6%98%8E%E5%BC%8F-declaration-vs-%E9%99%B3%E8%BF%B0%E5%BC%8F-expression-b9e62e385484

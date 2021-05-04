@@ -1,0 +1,25 @@
+https://medium.com/@paulyang1234/webpack-%E8%88%87-module-%E6%A8%A1%E7%B5%84%E5%8C%96-js-3aa4c572d7e0
+webpack
+1.entry & output
+起手入口點與出口點，將index.js做打包，index.js會是所有module.js的集合
+2. loader
+舉凡 scss、pug 等其他檔案文件需要做轉譯的文件，可以透過 loader 重新編譯
+3. plugin
+透過 plugin 可以引用第三方的插件去加工我們 webpack 過程
+4. mode
+開發者與生產者模式，當處於開發者模式可以使用 webpack-dev-server 去看你部屬後的網站長啥樣子，也能額外使用 
+hot module replacement 模塊熱替換節省你的開發時間，而生產者模式打包後的檔案會自動幫你 minify 不用額外設定。
+5. browser compatibility
+webpack 支持所有es5的瀏覽器， webpack 的 import() 和 require.ensure() 需要 Promise。但如果你需要使用更舊的就得用 polyfill
+
+websocket
+是網路協定的一種，與http的差異在於只需透過一次連結即可保持連線
+通常 WebSocket 都會運用在聊天室
+
+https://blog.techbridge.cc/2018/11/10/javascript-hoisting/
+hosting詳解
+TDZ(Temporal Dead Zone)
+let 與 const 確實有 hoisting，與 var 的差別在於提升之後，var 宣告的變數會被初始化為 undefined，而 let 與 const 的宣告不會被
+初始化為 undefined，而且如果你在「賦值之前」就存取它，就會拋出錯誤。
+在「提升之後」以及「賦值之前」這段「期間」，如果你存取它就會拋出錯誤，而這段期間就稱做是 TDZ，它是一個為了解釋 let 與 const 的 
+hoisting 行為所提出的一個名詞。

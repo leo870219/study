@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="count1">計數器1</button>
+    <div id="counter1">我被點擊了：0次</div>
+    <button id="count2">計數器2</button>
+    <div id="counter2">我被點擊了：0次</div>
+    <script>
+      function counter() {
+        let counter = 1;
+        return function () {
+          return counter++;
+        };
+      }
+      function counter() {
+        let counter = 1;
+        return function () {
+          return counter++;
+        };
+      }
+      let counter1 = counter();
+      let counter2 = counter();
+
+      document.getElementById("count1").addEventListener("click", () => {
+        document.getElementById(
+          "counter1"
+        ).innerText = `我被點擊了：${counter1()}次`;
+      });
+
+      document.getElementById("count2").addEventListener("click", () => {
+        document.getElementById(
+          "counter2"
+        ).innerText = `我被點擊了：${counter2()}次`;
+      });
+    </script>
+  </body>
+</html>

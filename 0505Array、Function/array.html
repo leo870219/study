@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 相同的陣列
+        let people = ["Jack", "Archer", "Festum", "David"]
+        console.log('原始陣列')
+        console.log(people);
+        people.push('Andy');
+        console.log('push():新增元素到陣列尾端')
+        console.log(people)
+        console.log('pop():從陣列尾端取出元素')
+        console.log(people.pop())
+        console.log(people);
+        console.log('unshift():新增元素到陣列頭端')
+        people.unshift('Andy');
+        console.log(people);
+        console.log('shift():從陣列頭端取出元素')
+        console.log(people.shift())
+        console.log(people);
+        console.log('includes():判斷元素是否在陣列中')
+        console.log(people.includes('Jack'))
+        let array2 = ['Java', 'Script', 'Good'];
+        console.log('concat():兩陣列結合');
+        console.log(people.concat(array2));
+        console.log('for:陣列取值');
+        for (let i = 0; i < people.length; i++) {
+            console.log(people[i])
+        }
+        console.log('for-in:陣列取值');
+        for (let index in people) {
+            console.log(people[index])
+        }
+        console.log('for-of:陣列取值');
+        for (let value of people) {
+            console.log(value)
+        }
+
+        let family = [
+            {
+                name: 'John',
+                age: 32,
+                employed: true,
+                children: [
+                    {
+                        name: 'Richard',
+                        age: 7
+                    },
+                    {
+                        name: 'Susan',
+                        age: 5
+                    }
+                ]
+            },
+            {
+                name: 'Morris',
+                age: 65,
+                employed: false,
+                children: [
+                    {
+                        name: 'Eason',
+                        age: 35
+                    }
+                ]
+            },
+            {
+                name: 'Alex',
+                age: 55,
+                employed: true,
+                children: [
+                    {
+                        name: 'Tom',
+                        age: 27
+                    },
+                    {
+                        name: 'Jeremy',
+                        age: 25
+                    },
+                    {
+                        name: 'Sam',
+                        age: 22
+                    }
+                ]
+            }
+        ]
+        let forEachFamilyItem1 = family.forEach((item, index, array) => {
+            console.log(item)
+        })
+        let forEachFamilyItem2 = family.forEach((item, index, array) => {
+            let str = ''
+            str += `姓名: ${item.name}, 年齡: ${item.age}`
+            console.log(str)
+        })
+        let forEachFamilyItem3 = family.forEach((item, index, array) => {
+            let str = '';
+            str += `姓名: ${item.name}, 年齡: ${item.age}, 共有 ${item.children.length} 小孩 ( `
+            let items = item.children
+            items.forEach(key => {
+                str += key.name + ' '
+            })
+            str += ')'
+            console.log(str)
+        });
+        //filter與find差別在於filter會傳條件為 true 的陣列，如果檢測元素中有 1 個元素滿足條件，則回傳 true, 剩餘的元素不會再進行檢測
+        console.log('filter:元素檢查')
+        let employedItems = family.filter(family => family.employed === true)
+        console.log(employedItems);
+        console.log('find:元素檢查')
+        let ageItems = family.find(family => family.age > 50);
+        console.log(ageItems)
+        console.log('map:建新陣列，內容為原陣列每個元素經callback運算後回傳')
+        //map建立一個新的陣列，其內容為原陣列的每一個元素經由回呼函式運算後所回傳的結果之集合。
+
+        let ageItems2 = family.map(family => {
+            if (family.age > 50) {
+                return `${family.name} 滿 50 歲`
+            } else {
+                return `${family.name} 未滿 50 歲`
+            }
+        })
+        //將一個累加器及陣列中每項元素（由左至右）傳入回呼函式，將陣列化為單一值。
+        let mapReduceItems = family.map(item => item.age).reduce((accumulator, currentValue, currentIndex, array) => Math.max(accumulator, currentValue))
+        console.log('reduce')
+        console.log(mapReduceItems);
+        //every與some正好相反，如果檢測元素中有 1 個元素不滿足條件，則回傳 false, 剩餘的元素不會再進行檢測
+        console.log('every:元素檢查');
+        let ageItems3 = family.every(family => family.age > 50);
+        console.log(ageItems3)
+        console.log('some:元素檢查')
+        let ageItems4 = family.some(family => family.age > 50);
+        console.log(ageItems4)
+        console.log('slice:擷取')
+        let sliceItems = family.slice(0, 2);
+        console.log(sliceItems)
+        let sliceItems2 = family.slice(-2, -1)
+        console.log(sliceItems2)
+        let math=[1,2,3];
+        let english=['a','b','c'];
+        console.log('concat:合併兩個或多個陣列')
+        console.log(math.concat(english));
+    </script>
+</body>
+
+</html>

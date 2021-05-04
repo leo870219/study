@@ -24,7 +24,7 @@ React.createElement(
 );
 
 將組件加入畫面中
-React.render(
+ReactDOM.render(
     組件實體,容器元件
 )
 

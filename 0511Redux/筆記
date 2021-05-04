@@ -1,0 +1,36 @@
+應用程式流程
+使用者介面->應用程式狀態->資料處理
+
+React專門用來處理使用者介面(Redux)
+Redux專門用來處理應用程式狀態(State)
+
+Redux三大原則
+單一數據源
+整個應用的state被儲存在一棵object tree中，並且這個object tree只存在於唯一一個store中。
+
+State 是只讀的
+唯一改變state的方法就是觸發action，action是一個用於描述已發生事件的普通對象。
+
+使用純函數來執行修改
+為了描述action如何改變state tree ，你需要編寫reducers。
+
+建立狀態儲存空間
+Redux.createStore(狀態處理函式,[初始狀態])
+
+派送改變狀態的行動
+store.dispatch(行動物件);
+!!!行動物件的規矩:一定要提供type，告訴人家你要做甚麼!!!
+
+回應狀態的改變
+store.subscribe(通知處理函式);
+
+停止回應狀態改變
+let unsubscribe=store.subscribe(通知處理函式);
+unsubscribe();
+
+取得最新狀態
+store.getState();
+
+白話文版本:
+想要改變狀態必須先用Redux.createStore創建儲存空間並設定(處理函式，[初始值])，再使用dispatch宣告action的type給reducer，
+reducer接收到會依照傳過來的type值進行狀態改變，另外subscribe可以讓每次狀態改變時被觸發
