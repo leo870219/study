@@ -1,0 +1,8 @@
+使用grid，父層須設定
+display:grid
+
+子層排版設定有
+grid-area(面的概念)
+grid-row & grid-column(線的概念)
+
+新特性minmax()

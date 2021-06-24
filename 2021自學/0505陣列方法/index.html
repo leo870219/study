@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="originData()">按我顯示數據</button>
+    <div id="main"></div>
+    <p id="originData"></p>
+    <p id="data"></p>
+    <script>
+      var arr = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
+      var people = [
+        {
+          name: "Casper",
+          like: "鍋燒意麵",
+          age: 18,
+        },
+        {
+          name: "Wang",
+          like: "炒麵",
+          age: 24,
+        },
+        {
+          name: "Bobo",
+          like: "蘿蔔泥",
+          age: 1,
+        },
+        {
+          name: "滷蛋",
+          like: "蘿蔔泥",
+          age: 3,
+        },
+      ];
+      //forEach不會有回傳值，用法forEach(function(物件,索引,整個陣列)))
+      function originData() {
+        let data = [];
+        let odata = [1, 2, 2, 3, 1, 5, 6, 4, 4, 5];
+        people.forEach(function (item, index, array) {
+          console.log(item);
+        });
+
+        //filter陣列去重，原理:indexOf回傳第一個找到的值的位子，後面重複值的index不同就會被篩選掉
+        var a = odata.filter(function (item, index, array) {
+          return array.indexOf(item) === index;
+        });
+        console.log(a);
+
+        //filter篩選偶數
+        a = odata.filter(function (item, index, array) {
+          return item % 2 == 0;
+        });
+        console.log(a);
+
+        //find
+        a = people.find(function (item) {
+          return item.like === "蘿蔔泥";
+        });
+        console.log(a);
+        a = people.map((item, index, array) => item.age + 1); //使用ES6語法簡寫
+        console.log(a);
+
+        //every用來檢查陣列中所有物件是否符合特定條件
+        console.log(people.every((item) => item.age > 5));
+
+        //some與every功能相似，差別在於陣列中物件只需部分符合特定條件即可
+        console.log(people.some((item) => item.age > 5));
+
+        //reduce比較特別，第一個參數為第二個參數的累加值
+        const reduceArr = arr.reduce((accumulator, currentValue) => {
+          console.log("=");
+          console.log(accumulator); // 0, 1, 3, 6, 10
+          console.log("+");
+          console.log(currentValue); // 1, 2, 3, 4, 5
+
+          return accumulator + currentValue;
+        }, 0);
+      }
+    </script>
+  </body>
+</html>

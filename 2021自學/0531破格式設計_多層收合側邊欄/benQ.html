@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+      header{
+        background-color: rgba(238, 238, 238, 1);
+      }
+      .line-one {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-top: 6px solid #492582;
+        margin: auto;
+        padding: 13px 0;
+        border-bottom: 1px solid #ccc;
+      }
+      header a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+      }
+      .wrap-left {
+        box-sizing: border-box;
+        padding-right: 7.5%;
+        width: 40%;
+        text-align: center;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+      }
+      .wrap-left .pic {
+        width: 20%;
+      }
+      .wrap-left .pic img {
+        padding-left: 35px;
+        width: 80%;
+      }
+      .wrap-left .text {
+        position: relative;
+        padding-right: 35px;
+      }
+      .wrap-left .text::after {
+        content: "|";
+        position: absolute;
+        right: 0;
+      }
+      .wrap-right {
+        box-sizing: border-box;
+        width: 60%;
+        padding: 0 30px;
+      }
+      .wrap-right a {
+        padding: 0 20px;
+      }
+      .line-two {
+        width: 100%;
+      }
+      .line-two nav {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 5px 0;
+      }
+      .line-two nav a{
+          font-size: 16px;
+      }
+      
+      .line-two nav a + a {
+        padding: 0 20px;
+      }
+      .line-two nav a img{
+          border: 1px solid #fff;
+          border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="line-one">
+        <div class="wrap-left">
+          <div class="text"><a href="">商用方案</a></div>
+          <div class="pic">
+            <a href=""><img src="logo-zowie.png" /></a>
+          </div>
+        </div>
+        <div class="wrap-right">
+          <a href="">防疫期間服務調整聲明</a>
+          <a href="">知識中心</a>
+          <a href="">銷售據點</a>
+          <a href="">聯絡客服</a>
+          <a href="">購物車 </a>
+          <a href="">會員登入</a>
+        </div>
+      </div>
+      <div class="line-two">
+        <nav>
+          <a href=""><img src="https://picsum.photos/120/68/?random=1" /></a>
+          <a href="">最新優惠</a>
+          <a href="">大型液晶</a>
+          <a href=""> 顯示器</a>
+          <a href="">投影機</a>
+          <a href="">護眼智慧檯燈</a>
+          <a href="">treVolo 無線喇叭</a>
+          <a href="">大型商用顯示器</a>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>

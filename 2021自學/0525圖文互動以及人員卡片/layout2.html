@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reset.css" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        width: 100%;
+        display: flex;
+        margin: auto;
+      }
+      .item {
+        position: relative;
+        margin: 0 10px;
+      }
+      .item img {
+        width: 100%;
+        vertical-align: bottom;
+      }
+      .item .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.5s;
+        text-align: center;
+      }
+      .item:hover .text {
+        opacity: 1;
+      }
+      .item .text h2 {
+        font-size: 30px;
+        font-weight: 500;
+        padding: 0 10px;
+      }
+      .item .text h2:after {
+        content: "";
+        display: block;
+        top: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        margin: 10px 0;
+        background-color: gold;
+        transition: 0.5s 0.3s;
+      }
+      .item:hover .text h2:after {
+        width: 100%;
+      }
+      .item .text p {
+        font-size: 16px;
+        font-weight: 100;
+      }
+      @media screen and (max-width: 768px) {
+        .item .text h2 {
+          font-size: 16px;
+        }
+        .item .text p {
+          font-size: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <img src="https://picsum.photos/500/400/?random=1" />
+        <div class="text">
+          <h2>在家最安全</h2>
+          <p>不無聊，大型液晶跟你一起守護健康!</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/400/?random=2" />
+        <div class="text">
+          <h2>BenQ智慧檯燈系列，感謝每個在家防疫的你</h2>
+          <p>為了長時間居家你，我們提供限時限量的智慧檯燈系列回饋。</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/400/?random=3" />
+        <div class="text">
+          <h2>官網限定</h2>
+          <p>購買LED 無線智慧投影機 GV1 就送超可愛的萌貓造型小夜燈</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://picsum.photos/500/400/?random=4" />
+        <div class="text">
+          <h2>質感影音生活新品味</h2>
+          <p>購買LED 無線智慧投影機 GV1 就送超可愛的萌貓造型小夜燈</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

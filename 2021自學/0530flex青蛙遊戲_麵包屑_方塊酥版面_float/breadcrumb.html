@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body {
+        background-color: mediumorchid;
+      }
+      .wrap {
+        background-color: midnightblue;
+        padding: 10px 0;
+        box-shadow: 10px 10px 10px rgb(133, 75, 226);
+      }
+      .crumb {
+        display: flex;
+        width: 100%;
+        margin: auto;
+      }
+      .crumb li {
+        padding: 0 20px;
+      }
+      .crumb li + li {
+        padding-left: 0;
+      }
+      .crumb li + li:before {
+        content: ">";
+        color: #fff;
+        margin-right: 20px;
+      }
+      .crumb a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .crumb a:hover,
+      .crumb li:last-child a{
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ol class="crumb">
+        <li><a href="">最新優惠</a></li>
+        <li><a href="">大型螢幕</a></li>
+        <li><a href="">顯示器</a></li>
+        <li><a href="">投影機</a></li>
+        <li><a href="">護眼智慧檯燈</a></li>
+        <li><a href="">喇叭</a></li>
+      </ol>
+    </div>
+  </body>
+</html>

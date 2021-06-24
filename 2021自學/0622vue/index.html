@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      img {
+        max-width: 100%;
+        vertical-align: bottom;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #app {
+        text-align: center;
+      }
+      .select {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        position: relative;
+      }
+      .left-click,
+      .right-click {
+        text-decoration: none;
+        color: #000;
+        transition: 0.5s;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+      }
+      .left-click {
+        left: 10px;
+      }
+      .right-click {
+        right: 10px;
+      }
+      .left-click::before,
+      .right-click::before {
+        content: "";
+        position: absolute;
+        border-bottom: 10px solid transparent;
+        border-top: 10px solid transparent;
+      }
+      .left-click::before {
+        border-right: 10px solid #000;
+      }
+      .right-click::before {
+        border-left: 10px solid #000;
+      }
+      .left-click:hover,
+      .right-click:hover {
+        background-color: black;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <div id="app">
+    <div class="title">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="pic">
+      <img :src="src" alt="" />
+    </div>
+    <div class="select">
+      <div class="left-block">
+        <a v-if="index > 0" @click="change(-1)" class="left-click"></a>
+      </div>
+      <div class="number">{{index+1}}</div>
+      <div class="unit">{{today.type}}</div>
+      <div class="title">{{today.title}}</div>
+      <div class="right-block">
+        <a v-if="index < total-1" @click="change(+1)" class="right-click"></a>
+      </div>
+    </div>
+  </div>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+      let data = {
+        title: "Hello I am Vue",
+        src: "https://picsum.photos/300/300/?random=1",
+        index: 0,
+        menu: [
+          { type: "個位數", title: "One" },
+          { type: "個位數", title: "Two" },
+          { type: "個位數", title: "Three" },
+          { type: "個位數", title: "Four" },
+          { type: "個位數", title: "Five" },
+          { type: "個位數", title: "Six" },
+          { type: "個位數", title: "Seven" },
+          { type: "個位數", title: "Eight" },
+          { type: "個位數", title: "Night" },
+          { type: "十位數", title: "Ten" },
+          { type: "十位數", title: "Eleven" },
+          { type: "十位數", title: "Twelve" },
+          { type: "十位數", title: "Thirteen" },
+          { type: "十位數", title: "Fourteen" },
+          { type: "十位數", title: "Fiftteen" },
+          { type: "十位數", title: "Sixteen" },
+          { type: "十位數", title: "Seventeen" },
+          { type: "十位數", title: "Eighteen" },
+          { type: "十位數", title: "Nineteen" },
+          { type: "十位數", title: "Twenty" },
+        ],
+      };
+      let vm = new Vue({
+        el: "#app",
+        data: data,
+        methods: {
+          change(number) {
+            this.index = (this.index + number + this.total) % this.total;
+          },
+        },
+        computed: {
+          today() {
+            return this.menu[this.index];
+          },
+          total() {
+            return this.menu.length;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

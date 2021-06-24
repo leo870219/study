@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      img {
+        width: 100%;
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: auto;
+      }
+      .header {
+        position: relative;
+        height: 350px;
+      }
+      .header .logo {
+        position: absolute;
+        top: 35px;
+        left: 0;
+      }
+      .header .logo a {
+        display: block;
+        width: 250px;
+        height: 250px;
+        background: url("https://picsum.photos/250/250/?random=1");
+      }
+      .header .menu {
+        margin: 30px 0 0 0;
+        float: right;
+      }
+      .header .menu li {
+        float: left;
+        background-color: cornflowerblue;
+      }
+      .header .menu li + li {
+        border-left: 1px solid #fff;
+      }
+      .header .menu li a {
+        display: block;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .content {
+        box-sizing: border-box;
+        border: 2px solid #000;
+        float: left;
+        width: 75%;
+        padding: 10px;
+      }
+      .content p {
+        margin-top: 30px;
+      }
+      .sidebar {
+        box-sizing: border-box;
+        float: left;
+        width: 20%;
+        margin-left: 5%;
+        border: 2px solid #000;
+        padding: 5px;
+      }
+      .banner img {
+        margin: 0 0 10px 0;
+      }
+      .footer {
+        padding: 20px 0;
+        clear: both;
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .header {
+          height: auto;
+        }
+        .header .logo {
+          position: relative;
+          width: 150px;
+          margin: auto;
+          padding-bottom: 20px;
+        }
+        .header .logo a {
+          width: 150px;
+          height: 150px;
+          background: url("https://picsum.photos/150/150/?random=1");
+        }
+        .header .menu {
+          float: none;
+        }
+        .header .menu li {
+          width: 90%;
+          float: none; /* float style */
+          border-radius: 3px;
+          margin: auto;
+        }
+        .header .menu li + li {
+          margin-top: 10px;
+        }
+        .header .menu li a {
+          width: 100%;
+          text-align: center;
+        }
+        .content {
+          box-sizing: border-box;
+          border: none;
+          float: none;
+          width: 100%;
+        }
+        .content p {
+          margin-top: 30px;
+          line-height: 20px;
+        }
+        .sidebar {
+          box-sizing: border-box;
+          float: none;
+          width: 100%;
+          margin-left: 0;
+          border: none;
+          padding: 5px;
+        }
+        .banner img {
+          margin: 0 0 10px 0;
+        }
+        .footer {
+          padding: 20px 0;
+          clear: both;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="logo">
+          <a href="#"></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#">公司簡介</a></li>
+          <li><a href="#">專業服務</a></li>
+          <li><a href="#">新聞與活動</a></li>
+          <li><a href="#">活動花絮</a></li>
+          <li><a href="#">聯繫我們</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. In
+          temporibus quae dolorum voluptates at odit ipsa rerum, quasi atque
+          inventore quibusdam odio tempore. Consequatur aut necessitatibus
+          voluptatem consectetur neque natus? Nam tempora debitis ad ipsum
+          reprehenderit, obcaecati optio provident, magni inventore neque culpa
+          earum est nihil nesciunt dicta totam! Mollitia eligendi modi quod eos
+          neque magni amet unde ab odit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
+          molestias odio repellendus, aliquid omnis inventore cum minima labore
+          sed eligendi aliquam iusto illum impedit quidem magnam animi, id, sunt
+          provident. Repudiandae, amet tempore labore eius consequatur harum
+          soluta iure voluptatum, modi aperiam dolorem repellat laboriosam omnis
+          perspiciatis similique assumenda illo nulla dignissimos facere cumque
+          blanditiis doloribus debitis sequi. Velit, debitis! Dolor, provident
+          eligendi officiis, delectus voluptates, cumque repellendus consequatur
+          itaque ab voluptas doloremque architecto recusandae aliquam alias
+          aperiam officia quod et facilis expedita asperiores eos veritatis
+          velit saepe ratione! Pariatur!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni velit
+          atque, maxime mollitia quidem facere tempore assumenda corrupti in,
+          aliquid recusandae quia natus nam eius exercitationem, ratione iste
+          culpa. Magni! A delectus sit voluptas neque iusto perferendis id sunt!
+          Ipsa incidunt aspernatur cum, tenetur, voluptatum sunt corrupti fugit,
+          cupiditate fugiat eum architecto necessitatibus doloremque deleniti
+          velit assumenda impedit quidem quaerat? Quisquam accusantium molestiae
+          numquam quia quasi ex cumque dolores rem velit dolore consectetur
+          molestias eos accusamus facere maiores, qui unde voluptates
+          perspiciatis voluptatibus ab, esse quaerat quibusdam eveniet?
+          Consectetur, laudantium? Facilis illum possimus sint voluptatem
+          suscipit alias, voluptatibus harum atque aspernatur quisquam
+          asperiores omnis dolorem animi ipsam fugit id aperiam, minima, porro
+          et ex laudantium? Harum corporis quibusdam officia laudantium.
+          Repellendus sunt quibusdam incidunt odit fugit laboriosam eos ducimus
+          perferendis veniam doloribus sequi voluptates quos maxime magni,
+          tenetur at cum deleniti eveniet tempora odio corrupti? Nihil voluptate
+          explicabo nemo facilis. Debitis quo nam expedita quis esse optio
+          aliquid, quidem distinctio commodi accusamus quia aut perferendis est
+          asperiores ducimus culpa corrupti, voluptates ex! Temporibus commodi
+          voluptatibus fugiat eos. Ipsum, quis quia!
+        </p>
+      </div>
+      <div class="sidebar">
+        <img src="https://picsum.photos/300/225?random=2" />
+
+        <img src="https://picsum.photos/300/225?random=3" />
+
+        <img src="https://picsum.photos/300/225?random=4" />
+      </div>
+      <div class="footer">Copyright &copy 2020 BenQ - all rights reserved.</div>
+    </div>
+  </body>
+</html>

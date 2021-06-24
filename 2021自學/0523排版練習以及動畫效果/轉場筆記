@@ -1,0 +1,38 @@
+Transition屬性
+transition-property:指定要轉換的CSS屬性
+
+transition-duration:轉換需要的時間，預設0，單位為s或ms
+
+transition-delay:延遲多久轉換，預設0，單位為s或ms
+
+transition-timing-function:轉換時的速度曲線，預設ease
+
+animation
+不論是使用什麼軟體，只要是製作動畫，一定少不了「關鍵影格 keyframe」，透過許多關鍵影格的組合，
+加上瀏覽器自動運算當中的漸變過程，就成為我們熟知的 CSS 動畫。
+
+Animationg屬性
+
+animation-name:動畫名稱
+
+animation-duration:動畫持續時間，預設 0，單位 s 或 ms。
+
+animation-delay:動畫延遲播放時間，預設 0，單位 s 或 ms。
+
+animation-iteration-count:動畫播放次數，預設 1。
+其他還有 infinite。
+
+animation-timing-function:動畫加速度函式，預設 ease。
+其他還有:linear、ease-in、ease-out、ease-in-out
+step-start、step-end、steps(int,start/end)、cubic-bezier(n,n,n,n)。
+
+animation-direction:動畫播放方向，預設 normal。
+其他還有 reverse、alternate、alternate-reverse。
+
+animation-fill-mode	動畫播放前後模式，預設 none。
+其他還有 forwards、backwards、both。
+
+animation-play-state	動畫播放或暫停狀態，預設 running。
+其他還有 paused。
+
+資料來源:https://www.oxxostudio.tw/articles/201803/css-animation.html

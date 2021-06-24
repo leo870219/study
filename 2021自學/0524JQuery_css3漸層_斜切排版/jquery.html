@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reset.css" />
+    <title>Document</title>
+    <style>
+      .box1 {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(179, 0, 0);
+        text-align: center;
+      }
+      .box2 {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: rgb(80, 50, 114);
+        text-align: center;
+      }
+      .title {
+        background-color: cadetblue;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+      .content {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+
+    <div class="title">產品資訊</div>
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sed
+      perferendis deserunt illo voluptatum optio consectetur soluta quidem enim
+      blanditiis velit temporibus unde, fuga cupiditate reiciendis nisi totam
+      praesentium! Aut!
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //$(".box1").click(function () {
+        //$(".box2").hide(); 直接隱藏
+        $(".box1").dblclick(function () {
+          //dblclick雙點擊
+          $(".box2").toggle();
+        });
+
+        $(".title").click(() => {
+          $(".content").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+RWD關鍵使用:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+content="width=device-width:由於市面上各種裝置的解析度都不同，此設定會強制把螢幕解析度變成載具的寬度
+initial-scale=1.0:縮放比例為1
+
+CSS3 media query語法
+如果以PC開發為主寫的時候要由大到小寫，以手機開發由小到大，因為CSS有相同屬性時下方會覆蓋上方值
+
+max-width
+為了不讓瀏覽器出現X軸，就不能把寬度寫死，用max-width取代width
+
+percent%
+根據父元素寬度去做自適應
+
+想要圖片響應式設計，可用max-width=100%
+
+也可直接在css reset時，寫上max-width=100%

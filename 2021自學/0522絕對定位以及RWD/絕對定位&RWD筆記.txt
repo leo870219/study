@@ -1,0 +1,16 @@
+絕對定位特性:
+1、與fixed很像，fixed永遠定在視窗的某個位置，而絕對定位只會定一次
+通常定位在父層，但條件是父層必須有設定定位，否則會逐層往上找，如果都沒找到，會定位在視窗(不是body)
+
+三種定位範例:
+https://zh-tw.learnlayout.com/position.html
+
+RWD首先必設定:
+寬度以百分比設定
+// 指定螢幕寬度為裝置寬度，畫面載入初始縮放比例 100%
+<meta name="viewport" content="width=device-width, initial-scale=1" >
+// 以下兩種設定都可以防止使用者做畫面縮放，將畫面鎖在縮放比例 100%
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" >
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+如果沒設定viewport tag，會導致media query沒作用

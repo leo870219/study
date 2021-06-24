@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .container {
+        padding: 100px 0;
+        display: grid;
+        width: 1400px;
+        margin: auto;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+      }
+      .item {
+        width: 500px;
+        margin: auto;
+        position: relative;
+      }
+      .item2 {
+        padding-bottom: 25%;
+      }
+      .item1 .pic {
+        width: 100%;
+      }
+      .item2 .pic {
+        width: 50%;
+        height: 50%;
+        position: absolute;
+      }
+      .item .pic img {
+        width: 100%;
+        vertical-align: bottom;
+      }
+      .item1 h2 {
+        position: absolute;
+        top: -6px;
+        z-index: 6;
+        color: chocolate;
+      }
+      .item2 h2 {
+        position: relative;
+        z-index: 6;
+        color: chocolate;
+        transform: translateX(100px) translateY(260px);
+      }
+      .item h2::before,
+      .item h2::after {
+        content: "";
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+      }
+      .item1 h2::before,
+      .item1 h2::after {
+        content: "2021新冠病毒";
+      }
+      .item2 h2::before,
+      .item2 h2::after {
+        content: "待在家中已過三日";
+      }
+      .item h2::before {
+        top: -8px;
+        height: 18px;
+        color: rgba(223, 170, 132, 0.801);
+      }
+      .item h2::after {
+        top: -16px;
+        height: 18px;
+        color: rgba(212, 127, 67, 0.219);
+      }
+      .item .text {
+        position: absolute;
+        z-index: 1;
+      }
+      .item1 .text {
+        right: -42px;
+        bottom: 0;
+        transform: rotate(90deg);
+      }
+      .item2 .text {
+        left: -20px;
+        top: -20px;
+      }
+      .item .number {
+        position: absolute;
+        font-size: 30px;
+        font-weight: 900;
+
+        height: 50px;
+        line-height: 50px;
+      }
+      .item1 .number {
+        bottom: -50px;
+        left: 0;
+      }
+      .item .pic::before,
+      .item2 .pic::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 150px;
+        background-color: #fff;
+        border: 10px solid rgb(107, 214, 218);
+        z-index: -1;
+      }
+      .item1 .pic::before {
+        right: -100px;
+        top: -75px;
+      }
+      .item2 .pic::before {
+        right: -50px;
+        top: -50px;
+        background-color: rgb(107, 214, 218);
+      }
+      .item2 .pic::after {
+        right: -100px;
+        top: -100px;
+        z-index: -2;
+      }
+      .item1::after {
+        content: "";
+        position: absolute;
+        width: 240px;
+        height: 100px;
+        left: 30px;
+        bottom: -50px;
+        background-image: linear-gradient(
+          135deg,
+          rgb(107, 214, 218) 0px,
+          rgb(107, 214, 218) 20px,
+          transparent 20px,
+          transparent 40px,
+          rgb(107, 214, 218) 40px,
+          rgb(107, 214, 218) 60px,
+          transparent 60px,
+          transparent 80px
+        );
+        background-size: 57px 57px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item1">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=1" />
+        </div>
+        <h2>2021新冠病毒</h2>
+        <p class="text">台灣加油</p>
+        <p class="number">01</p>
+      </div>
+      <div class="item item2">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=2" />
+        </div>
+        <h2>待在家中已過三日</h2>
+        <p class="text">越來越宅</p>
+      </div>
+    </div>
+  </body>
+</html>

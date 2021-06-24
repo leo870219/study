@@ -1,0 +1,37 @@
+DOM(文件物件模型)
+瀏覽器會將所寫的網頁架構，建構成一個樹狀模型，也就是DOM
+
+寫網頁就像蓋大樓
+HTML DOM是大樓骨架
+CSS是裝潢
+JavaScript是水電
+
+要先等大樓骨架(HTML DOM)建構完成再去進行裝潢(CSS)及水電配置(JavaScript)
+
+所以JQuery有起手式寫法:
+$(document).ready()
+
+.class1.class2
+連在一起代表，選取同時擁有class1以及class2的元素
+
+.class1 .class2
+分開代表，選取class1的底下有class2屬性的元素
+
+css3漸層:
+線性漸層 linear-gradient
+
+background: linear-gradient(角度, 色碼1 位置1,色碼2 位置2,....)
+
+顏色漸變方向，預設值為由上而下:top or bottom
+
+由左而右的線性漸層效果:left or right
+
+對角線的線性漸層效果:left top or bottom right
+
+利用角度調整的線性漸層效果:角度deg
+
+圓形(徑向)漸層 radial-gradient
+
+background: radial-gradient(ellipse 或 circle,顏色1,顏色2, ......);
+
+範例:https://codepen.io/irisLife/pen/XaGgqP

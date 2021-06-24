@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #000;
+      }
+      .wrap {
+        width: 100%;
+      }
+      .item {
+        float: left;
+        position: relative;
+        overflow: hidden;
+      }
+      .item:first-child {
+        width: 50%;
+      }
+      .item:first-child ~ .item {
+        width: 25%;
+      }
+      .pic img {
+        width: 100%;
+      }
+      .text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        color: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0,0,0,.5);
+        text-align: center;
+        padding: 15px;
+        box-sizing: border-box;
+        transform: scale(0);
+        transition: 0.5s;
+        opacity: 0;
+
+      }
+      .item:hover .text {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .text h3 {
+        font-weight: 900;
+      }
+      .text p {
+        font-weight: 300;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=1" />
+        </div>
+        <div class="text">
+          <h3>在家不無聊 一起守護健康</h3>
+          <p>
+            活動時間：2021/5/20~2021/6/8，官方購物網限定(依官網訂單訂購日為準)活動方案1：凡於BenQ官方購物網，購買大型液晶指定機種，就送德國雙人二件式刀組或砧板二選一
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=2" />
+        </div>
+        <div class="text">
+          <h3>BenQ智慧檯燈系列，感謝每個在家防疫的你</h3>
+          <p>
+            疫情升溫，長時間居家工作、學習、娛樂成為每個家庭的日常，一家人分別在家中各個角落專注地盡自己本分。但是家中並非每個角落都光源充足，久了反而容易造成精神疲勞。為了自己、為了家人，充足的環境光源是很重要的。BenQ感謝每個在家防疫的你，我們提供限時限量的智慧檯燈系列回饋。
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=3" />
+        </div>
+        <div class="text">
+          <h3>購買LED 無線智慧投影機 GV1 就送超可愛的萌貓造型小夜燈</h3>
+          <p>
+            活動時間：5/24~送完為止 活動方案：凡於 BenQ 官方購物網，購買 LED
+            無線智慧投影機 GV1，送「萌貓小夜燈」
+            贈品出貨說明：將隨貨寄出，隨機出貨，贈品有限，送完為止。
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=4" />
+        </div>
+        <div class="text">
+          <h3>打造個人居家工作室 專業影像修圖最佳工具</h3>
+          <p>
+            凡於活動時間內購買SW270C登錄即贈 Spyder X pro
+            校色器，SW321C登錄即贈X-rite i1 Display Pro專業校色器
+            疫情的艱難時刻，突然宣布在家辦公，工作的工具、設備都放在工作室，只剩一台筆電怎麼工作？別擔心，BenQ替你打造專屬的個人居家工作室！BenQ
+            SW
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/500/?random=5" />
+        </div>
+        <div class="text">
+          <h3>如何選購合適的液晶電視</h3>
+          <p>
+            電視規格不斷推陳出新，現在主流電視規格到底怎麼看呢?
+            選購上又有哪些要注意的地方呢?為什麼市場上的電視規格這麼多，價差也不小，我有需要高階的電視嗎
+            ?
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

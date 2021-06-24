@@ -1,0 +1,4 @@
+input:focus{
+    out:line
+}
+可將input點選到後出現的邊框線去除

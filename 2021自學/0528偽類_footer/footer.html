@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .main-footer {
+        padding: 150px 0 0;
+        background: linear-gradient(
+          100deg,
+          rgb(43, 230, 105),
+          rgb(89, 87, 226)
+        );
+      }
+      .container {
+        display: flex;
+        width: 1200px;
+        margin: auto;
+      }
+      .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item h4 {
+        font-size: 26px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+      }
+      .footer-item nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .footer-item nav a {
+        line-height: 1.5;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 0;
+        transition: color 0.5s;
+      }
+      .footer-item nav a:hover {
+        color: rgb(226, 148, 111);
+      }
+
+      .footer-form form {
+        display: flex;
+        width: 80%;
+      }
+      .footer-form input[type="text"],
+      .footer-form input[type="submit"] {
+        border: none;
+        padding: 5px 10px;
+      }
+      .footer-form input[type="text"] {
+        width: 0;
+        flex-grow: 1;
+      }
+      .footer-form input[type="submit"] {
+        background-color: rgb(107, 230, 148);
+        color: #fff;
+      }
+      .copyright {
+        margin: 150px 0;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #3e5293;
+        color: #70f6df;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-footer">
+      <div class="container">
+        <div class="footer-item footer-form">
+          <h4>追蹤我們</h4>
+          <nav>
+            <a href="#">訂閱電子報</a>
+            <form action="">
+              <input type="text" />
+              <input type="submit" value="訂閱" />
+            </form>
+            <a href="http://"> 官方 Line 線上客服</a>
+            <a href="http://"> 加入官方 Facebook 粉絲團</a>
+            <a href="http://"> 訂閱官方 YouTube 頻道</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>BenQ Store</h4>
+          <nav>
+            <a href="#">尋找銷售據點</a>
+            <a href="#">最新優惠</a>
+            <a href="#">新聞與活動</a>
+            <a href="#">第一次購物就上手</a>
+            <a href="#">官網購物常見問題</a>
+            <a href="#">延長保固購買</a>
+            <a href="#">贈品兌換網站首頁</a>
+            <a href="#">福利品專區</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>支援服務</h4>
+          <nav>
+            <a href="">服務公告</a>
+            <a href="">產品註冊</a>
+            <a href="">保固條例</a>
+            <a href="">網路報修</a>
+            <a href="">檔案下載與常見問題</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>更多資訊</h4>
+          <nav>
+            <a href="">關於明基</a>
+            <a href="">知識中心</a>
+            <a href="">專業商用解決方案</a>
+            <a href="">ZOWIE e-Sports 電競產品</a>
+            <a href="">商展整合(租賃)服務</a>
+            <a href="">人才招募</a>
+            <a href="">明基基金會</a>
+          </nav>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright &copy 2020 BenQ - all rights reserved.
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+圖解flex:
+https://cythilya.github.io/2017/04/04/flexbox-basics/
+
+flex    青蛙遊戲:
+https://flexboxfroggy.com/#zh-tw
+
+grid種花遊戲:
+https://codepip.com/games/grid-garden/
+
+flex-direction和flex-wrap兩個屬性經常會一起使用，所以有縮寫屬性flex-flow。這個縮寫屬性接受兩個屬性的值，兩個值中間以空格隔開。
+
+align-content決定行之間的間隔，而align-items決定元素整體在容器的什麼位置。只有一行的時候align-content沒有任何效果。
+
+grid-column-start 和 grid-column-end 兩個屬性，可用grid-column縮寫屬性，它可以一次接受兩個值，只要用 '/' 分開就好
+
+float特性:
+當子層物件有float屬性，父層會抓不到子層寬高，原本父層高度是由子層物件的內容撐開的，所以父層高度會縮為0
+解決方案:
+一、在浮動物件後方添加一個div，並設定css屬性clear:both，這代表這個div會在浮動物件的後方
+二、在浮動物件的容器添加css屬性overflow:hidden
+三、設定浮動物件的容器偽元素
+::after{      
+    content: "";
+    clear: both;
+    display: block;
+    }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .main-header {
+        background: linear-gradient(
+          0deg,
+          rgb(219, 118, 143),
+          rgb(132, 202, 130)
+        );
+      }
+      .container {
+        display: flex;
+        max-width: 1200px;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+      }
+      .main-pic img {
+        width: 100%;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+      .main-nav {
+        margin: auto;
+        display: flex;
+      }
+      .main-nav a {
+        padding: 0 10px;
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+        transition: 0.5s;
+      }
+      .main-nav a:hover {
+        transform: translateY(-5px);
+      }
+      .main-nav a:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        right: 50%;
+        left: 50%;
+        border-bottom: 1px solid #fff;
+        transition: 0.5s;
+      }
+      .main-nav a:hover::after {
+        right: 0;
+        left: 0;
+      }
+      .header-search {
+        display: flex;
+      }
+      .header-search button,
+      .header-search input {
+        border: none;
+        padding: 5px 10px;
+      }
+      .header-search button:focus,
+      .header-search input:focus {
+        outline: none;
+      }
+      .header-search button {
+        border-radius: 0 200px 200px 0;
+      }
+      .header-search input {
+        border-radius: 200px 0 0 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-header">
+      <div class="container">
+        <div class="main-pic">
+          <img src="https://picsum.photos/100/80/?random=1" />
+        </div>
+        <nav class="main-nav">
+          <a href="http://"> 防疫期間服務調整聲明</a>
+          <a href="http://"> 知識中心</a>
+          <a href="http://"> 銷售據點</a>
+          <a href="http://"> 聯絡客服</a>
+        </nav>
+        <div class="header-search">
+          <input type="search" name="" id="" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reset.css" />
+    <title>Document</title>
+    <style>
+      body {
+        background: linear-gradient(20deg, rgb(1, 35, 12), rgb(136, 157, 209))
+           center center / 100% 100%;
+      }
+      .wrap {
+        width: 50%;
+        margin: auto;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+      }
+      .item .pic {
+        width: 55%;
+      }
+      .item .pic img {
+        width: 100%;
+        vertical-align: bottom;
+        border-radius: 10%;
+      }
+      .item .text {
+        border-radius: 10%;
+        width: 55%;
+        position: relative;
+        z-index: 1;
+        padding: 50px 20px;
+        box-sizing: border-box;
+      }
+      .item > :first-child {
+        margin-right: -10%;
+      }
+      .item:nth-child(1) .text {
+        background-color: rgba(253, 170, 170, 0.8);
+      }
+      .item:nth-child(2) .text {
+        background-color: rgba(170, 253, 253, 0.8);
+      }
+      .item:nth-child(3) .text {
+        background-color: rgba(253, 170, 249, 0.8);
+      }
+      .item:nth-child(4) .text {
+        background-color: rgba(120, 128, 118, 0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/400/?random=1" />
+        </div>
+        <div class="text">
+          4K HDR 桌前娛樂大螢幕｜D43-720
+          獨家奈米防眩屏，屏除惱人螢幕反射，讓你看不到倒影
+          特調遊戲模式，遊戲畫面同步達到無延遲感的體驗
+          支援PIP/PBP多視窗模式，螢幕附遙控器，快速鍵更方便
+        </div>
+      </div>
+      <div class="item">
+        <div class="text">
+          親子共讀護眼檯燈 寬廣照明、亮度偵測、護眼推薦｜MindDuo 光學升級版
+          【夠廣】95cm 超廣照明：獨特光學設計，照射面積是一般檯燈的 150%
+          【夠亮】亮度偵測自動調光：提供亮度充足、光線均勻的舒適光線
+          【夠貼心】入座感應自動開燈：紅外線偵測感應即主動給光，離席 30
+          分鐘自動關燈
+        </div>
+        <div class="pic">
+          <img src="https://picsum.photos/500/400/?random=2" />
+        </div>
+      </div>
+      <div class="item">
+        <div class="pic">
+          <img src="https://picsum.photos/500/400/?random=3" />
+        </div>
+        <div class="text">
+          專業設計繪圖螢幕32吋4K UHD｜PD3200U 32吋搭載IPS面板與UHD 3840x2160
+          100% sRGB 支援並符合Rec.709色域
+          支援翻轉與直立檢視，KVM雙主機單螢幕切換
+        </div>
+      </div>
+      <div class="item">
+        <div class="text">
+          4K HDR 雷射電視, 3,000流明｜V6000 98% DCI-P3色域，4K UHD
+          高解析度，支援4K HDR, BT.2020 高畫質影片
+          不需要大空間，僅需30公分即有100吋大畫面
+          長效雷射光源，壽命長達20,000小時，每天看8小時可看6.8年
+        </div>
+        <div class="pic">
+          <img src="https://picsum.photos/500/400/?random=4" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

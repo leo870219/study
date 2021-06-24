@@ -1,0 +1,2 @@
+偽類::before & ::after
+必須有content屬性才會作用，content屬性中的值就是想呈現的值

@@ -1,0 +1,12 @@
+z-index 只對那些有設定 position 的元素有效
+
+CSS3 :nth-child(n) 選取器
+
+背景
+fixed center center / 100% 100%;
+
+設定fixed背景永遠固定 背景X軸位置 背景Y軸位置 / 背景的寬 背景的高
+
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
+
+漸層色背景是background-image，不是background

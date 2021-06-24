@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .banner {
+        height: 50vh;
+        background: url(https://www.benq.com/content/dam/b2c/zh-tw/promotion/all/promotion-top-banner-kv.jpg)
+          center top/cover;
+      }
+      .container {
+        width: 1200px;
+        display: flex;
+        margin: auto;
+        padding: 100px 0;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+      }
+      .item {
+        margin: 0 20px;
+        width: 560px;
+      }
+      .item h2 {
+        margin-bottom: 30px;
+      }
+      .item p {
+        margin-bottom: 20px;
+      }
+      section {
+        position: relative;
+      }
+      section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: rgb(255, 255, 255);
+        transform: translateY(-50%);
+        box-shadow: 180px 30px 0px #fff, 360px 0px 0px #fff, 520px 50px 0px #fff,
+          680px 0px 0px #fff, 950px 0px 0px #fff, 1020px 0px 0px #fff,
+          -120px 70px 0px #fff, -220px 50px 0px #fff, -360px 0px 0px #fff,
+          -520px 50px 0px #fff, -680px 0px 0px #fff, -780px 50px 0px #fff,
+          0px -30px 0px rgba(0, 0, 0, 0.5), 150px 0px 0px rgba(0, 0, 0, 0.5),
+          320px -20px 0px rgba(0, 0, 0, 0.5), 520px -20px 0px rgba(0, 0, 0, 0.5),
+          680px 0px 0px rgba(0, 0, 0, 0.5), 950px -20px 0px rgba(0, 0, 0, 0.5),
+          1020px 0px 0px rgba(0, 0, 0, 0.5), -180px -20px 0px rgba(0, 0, 0, 0.5),
+          -360px -30px 0px rgba(0, 0, 0, 0.5),
+          -520px -20px 0px rgba(0, 0, 0, 0.5),
+          -680px -30px 0px rgba(0, 0, 0, 0.5),
+          -780px -20px 0px rgba(0, 0, 0, 0.5);
+      }
+      section::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner"></div>
+    <section>
+      <div class="container">
+        <div class="item">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+            debitis placeat enim quis, hic corporis ex excepturi. Eum distinctio
+            consequuntur tempora atque blanditiis molestiae perferendis nesciunt
+            asperiores. Alias, modi porro.
+          </p>
+          <p>
+            Recusandae ipsam iste dolorum magnam esse, doloremque mollitia
+            sapiente soluta laborum aperiam ipsum, dolor quo quibusdam optio
+            minus exercitationem? Reiciendis, quo deserunt vitae laborum ad
+            impedit excepturi earum itaque sapiente!
+          </p>
+        </div>
+        <div class="item">
+          <h2>title</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+            debitis placeat enim quis, hic corporis ex excepturi. Eum distinctio
+            consequuntur tempora atque blanditiis molestiae perferendis nesciunt
+            asperiores. Alias, modi porro.
+          </p>
+          <p>
+            Recusandae ipsam iste dolorum magnam esse, doloremque mollitia
+            sapiente soluta laborum aperiam ipsum, dolor quo quibusdam optio
+            minus exercitationem? Reiciendis, quo deserunt vitae laborum ad
+            impedit excepturi earum itaque sapiente!
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

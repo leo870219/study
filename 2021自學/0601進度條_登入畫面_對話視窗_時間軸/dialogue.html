@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        background-color: cadetblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .dialogue {
+        width: 500px;
+        background-color: cornsilk;
+        padding: 20px;
+        box-shadow: 0 0 0 5px rgb(112, 158, 211);
+      }
+      .user {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+      .local {
+        justify-content: flex-end;
+      }
+      .user .avatar {
+        text-align: center;
+        width: 60px;
+        flex-shrink: 0;
+      }
+      .user .pic {
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .user .pic img {
+        width: 100%;
+        vertical-align: middle;
+      }
+
+      .user .text {
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .remote .text {
+        background-color: rgb(255, 255, 255);
+        margin-left: 20px;
+        margin-right: 80px;
+      }
+      .local .text {
+        background-color: turquoise;
+        margin-right: 20px;
+        margin-left: 80px;
+        order: -1;
+      }
+      .remote .text::before,
+      .local .text::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+      .remote .text::before {
+        border-right: 10px solid rgb(255, 255, 255);
+        left: -10px;
+      }
+      .local .text::before {
+        border-left: 10px solid turquoise;
+        right: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialogue">
+      <div class="user remote">
+        <div class="avatar">
+          <div class="pic">
+            <img src="https://picsum.photos/300/300/?random=1" />
+          </div>
+          <div class="name">主管</div>
+        </div>
+        <div class="text">今天麻煩你幫我處理這件事</div>
+      </div>
+      <div class="user local">
+        <div class="avatar">
+          <div class="pic">
+            <img src="https://picsum.photos/300/300/?random=2" />
+          </div>
+          <div class="name">員工</div>
+        </div>
+        <div class="text">
+          好的，我今日會完成這件事，完成之後會再向您回報，辛苦了!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

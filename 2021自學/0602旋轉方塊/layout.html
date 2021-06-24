@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      ul {
+        width: 960px;
+        margin: auto;
+        padding: 100px 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      li {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+        margin: 0 60px -40px;
+        position: relative;
+        font-size: 30px;
+      }
+      li::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        outline: 1px solid deepskyblue;
+        transform: rotate(45deg);
+        z-index: -1;
+        transition: .5s;
+      }
+      li:hover::before {
+        background-color: rgb(150, 135, 135);
+      }
+      .box1::before {
+        background-color: #ff1;
+      }
+      .box2::before {
+        background-color: #f82;
+      }
+      .box3::before {
+        background-color: #7f3;
+      }
+      .box4::before {
+        background-color: #f64;
+      }
+      .box5::before {
+        background-color: #5f5;
+      }
+      .box6::before {
+        background-color: #f46;
+      }
+      .box7::before {
+        background-color: #3f7;
+      }
+      .box8::before {
+        background-color: #f28;
+      }
+      .box9::before {
+        background-color: #1f9;
+      }
+      li:nth-child(n + 4) {
+        left: 160px;
+      }
+      li:nth-child(n + 7) {
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="box1">今天</li>
+      <li class="box2">天氣</li>
+      <li class="box3">不錯</li>
+      <li class="box4">早上</li>
+      <li class="box5">上班前</li>
+      <li class="box6">先來</li>
+      <li class="box7">切個</li>
+      <li class="box8">旋轉</li>
+      <li class="box9">方塊</li>
+    </ul>
+  </body>
+</html>

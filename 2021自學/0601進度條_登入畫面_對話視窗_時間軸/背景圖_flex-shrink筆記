@@ -1,0 +1,19 @@
+.background: url(圖片來源) no-repeat center center / cover;
+
+新屬性backdrop-filter:具有許多特點，除了能夠將圖片加上特效外，更嚴格來說它是將整個區塊的下層加上特效
+缺點:耗效能
+blur: 模糊
+brightness: 明度
+contrast: 對比度
+drop-shadow: 陰影
+grayscale: 灰階
+hue-rotate: 色相
+invert: 反轉
+opacity: 透明度
+sepia: 棕褐色
+saturate: 飽和度
+
+參考:https://wcc723.github.io/development/2020/10/12/frosted-glass/
+
+flex特性預設會將元素自動縮小
+調整flex-shrink:0將不會自動縮小

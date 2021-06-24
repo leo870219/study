@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "Wes", year: 1988 },
+        { name: "Kait", year: 1986 },
+        { name: "Irv", year: 1970 },
+        { name: "Wes", year: 1988 },
+      ];
+
+      const comments = [
+        { text: "Love this!", id: 523423 },
+        { text: "Super good", id: 823423 },
+        { text: "You are the best", id: 2039842 },
+        { text: "Ramen is my fav food ever", id: 123523 },
+        { text: "Nice Nice Nice!", id: 542328 },
+      ];
+      //【第一題：people 內是否至少有一位是成年?】
+      const someOneAdult = people.some(
+        (item) => new Date().getFullYear() - item.year >= 18
+      );
+      console.log(someOneAdult);
+      //【第二題：people 內是否至皆為成年?】
+      const allGuysAdult = people.every(
+        (item) => new Date().getFullYear() - item.year >= 18
+      );
+      console.log(allGuysAdult);
+      //【第三題：請撈出 comments 裏頭 id 為 823423 的資訊】
+      const findId = comments.find((item) => item.id === 823423);
+      console.log(findId);
+      //【第三題：找出 id 為 823423 的資訊刪除，回傳新陣列】
+      const target = comments.findIndex((item) => item.id === 823423);
+      const newComments = [
+        ...comments.splice(0, target),
+        ...comments.splice(target),
+      ];
+      console.log(newComments);
+      //自己出【第三題：people資料是20年前建檔，請重新寫一筆新陣列資料】
+      const newData = people.map((item) => item.year + 20);
+      console.log(newData);
+      //使用ES6新數據結構Set，他類似於陣列，但每個參數只能存在唯一值
+      //這邊的...是展開運算符，會將陣列中所有數值個別展開
+      const array = [1, 4, 2, 3, 5, 12, 3, 4, 2, 12, 4, 3, 1, 2, 3, 4, 6];
+      function uniqueSet(array) {
+        return [...new Set(array)];
+      }
+      console.log(uniqueSet(array));
+      //展開運算符用途範例
+      console.log(Math.max(array)); //NaN，因為陣列不是數值
+      console.log(Math.max(...array)); //12，展開後才能進行個別比較
+      //去重 & 排序
+      //sort()背後運作原理是會將陣列中所有數值兩兩相比，如果回傳-1等於數字較小會放到左邊，如果回傳1等於數字較大會放到右邊
+      //排序大到小或小到大，由sort中的function兩數相減位置而定
+      function unique(array) {
+        let arr = [];
+        for (i = 0; i < array.length; i++) {
+          if (arr.indexOf(array[i]) === -1) {
+            arr.push(array[i]);
+            arr.sort((a, b) => b - a);
+          }
+        }
+        return arr;
+      }
+      console.log(unique(array));
+      //加總
+      console.log(array.reduce((a, b) => a + b));
+    </script>
+  </body>
+</html>

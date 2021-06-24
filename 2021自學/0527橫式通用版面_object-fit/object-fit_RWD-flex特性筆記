@@ -1,0 +1,26 @@
+object-fit:cover
+會將圖片填滿容器，多於部分裁切掉
+
+flex三大特性RWD更方便
+flex-grow延展比
+flex-shrink收縮比
+flex-basis基本比
+
+父元素屬性
+flex-direction用來設定該flex容器資料流方向，資料流方向為主軸，而交叉軸為次軸
+flex-direction:row(橫排) column(直排) 加上-reverse會反轉順序
+
+主軸對其控制
+justify-content: flex-start center flex-end space-around sapce-between
+
+次軸對齊控制
+align-items(針對單行子物件):flex-start center flex-end stretch(自動伸縮)
+align-content(針對多行子物件):space-around sapce-between
+
+flex-wrap:wrap使flex會自動換行
+
+子元素屬性
+order: 改變排序順序
+flex-grow: 延展比
+flex-basis: 設定主軸長度
+flex-shrink: 收縮比

@@ -1,0 +1,16 @@
+filter() 會回傳一個陣列，其條件是 return 後方為 true 的物件，適合用在搜尋符合條件的資料。
+find() 與 filter() 很像，但 find() 只會回傳第一次為true的值。
+forEach() 是陣列函式最單純的一個，不會額外回傳值，只單純執行每個陣列內的物件或值。
+使用 map() 時需要回傳一個值，他會透過函式內所回傳的值組合成一個陣列。
+如果不回傳則是 undefined
+回傳數量等於原始陣列的長度
+這很適合將原始的變數運算後重新組合一個新的陣列。
+every() 檢查所有的陣列是否符合條件，這僅會回傳一個值 true or false，可以用來檢查陣列中的內容是否符合特定條件
+
+Array.reduce(callback[accumulator, currentValue, currentIndex, array], initialValue)
+accumulator：經由個別 currentValue 加總的累計值
+currentValue：Array 的個別 item
+currentIndex：Array item 的索引
+array：呼叫該 Array method 的陣列
+initialValue：預設值，放在 function 的最後方，非必填
+

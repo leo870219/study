@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        left: 0;
+        list-style: none;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        background: url(https://picsum.photos/1400/900/) no-repeat center center /
+          cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login {
+        width: 500px;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0 5px #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+      }
+      form {
+        width: 300px;
+        color: white;
+      }
+      form h2 {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #fff;
+      }
+      form .group {
+        margin-top: 20px;
+      }
+      form .group label {
+        line-height: 2;
+      }
+      form .group input {
+        line-height: 2;
+        width: 100%;
+      }
+      form .btn-group {
+        width: 100%;
+        margin-top: 30px;
+        font-size: 0;
+      }
+      form .btn-group button {
+        font-size: 20px;
+        width: 140px;
+        border: none;
+        border-radius: 5px;
+        background-color: turquoise;
+      }
+      form .btn-group button + button {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <form action="">
+        <h2>會員登入</h2>
+        <div class="group">
+          <label for="user-account">帳號</label>
+          <input type="text" id="user-account" />
+        </div>
+        <div class="group">
+          <label for="user-password">密碼</label>
+          <input type="text" id="user-password" />
+        </div>
+        <div class="btn-group">
+          <button>登入</button>
+          <button>取消</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

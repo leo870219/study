@@ -1,0 +1,34 @@
+vue ssr編寫通用代碼約束條件
+由於用例和平台API 的差異，當運行在不同環境中時，我們的代碼將不會完全相同。
+
+服務器上的數據響應
+將數據進行響應式的過程在服務器上是多餘的，所以默認情況下禁用。
+
+組件生命週期鉤子函數
+由於沒有動態更新，所有的生命週期鉤子函數中，只有beforeCreate和created會在服務器端渲染(SSR)過程中被調用。
+你應該避免在beforeCreate和created生命週期時產生全局副作用的代碼
+
+訪問特定平台(Platform-Specific) API
+通用代碼不可接受特定平台的API，因此如果你的代碼中，直接使用了像window或document，這種僅瀏覽器可用的全局變量
+，則會在Node.js中執行時拋出錯誤，反之也是如此。
+
+由於Server端可能要渲染一些非同步數據，在渲染前就該預先加載完成，另外避免服務端跟用戶端數據狀態不同
+所以使用vuex進行統一管理狀態
+
+Vuex 
+Action:用來處理非同步，提交的是mutation，而不是直接變更狀態，通過store.dispatch觸發
+
+注意事項:
+使用「SSR + 客戶端混合」時，需要了解的一件事是，瀏覽器可能會更改的一些特殊的HTML 結構。
+瀏覽器會在<table>內部自動注入<tbody>，然而，由於Vue生成的虛擬DOM (virtual DOM)不包含<tbody>，所以會導致無法匹配。
+
+每次編輯過應用程序源代碼之後，都必須停止並重啟服務。這在開發過程中會影響開發效率。此外，Node.js 本身不支持source map。
+vue-server-renderer提供一個名為createBundleRenderer的API，用於處理此問題
+bundle renderer優點
+內置的source map支持（在webpack配置中使用devtool: 'source-map'）
+
+在開發環境甚至部署過程中熱重載（通過讀取更新後的bundle，然後重新創建renderer 實例）
+
+關鍵CSS(critical CSS)注入（在使用*.vue文件時）：自動內聯在渲染過程中用到的組件所需的CSS。更多細節請查看CSS章節。
+
+使用clientManifest進行資源注入：自動推斷出最佳的預加載(preload)和預取(prefetch)指令，以及初始渲染所需的代碼分割chunk。

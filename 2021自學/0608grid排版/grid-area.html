@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        box-sizing: border-box;
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "B B A A"
+          "B B A A"
+          "B B A A"
+          "C C C C";
+        grid-gap: 10px;
+      }
+      .a {
+        background-color: rgb(182, 71, 71);
+        grid-area: A;
+      }
+      .b {
+        background-color: rgb(55, 139, 114);
+        grid-area: B;
+      }
+      .c {
+        background-color: rgb(138, 121, 216);
+        grid-area: C;
+      }
+      @media screen and (max-width: 750px) {
+        .container {
+          grid-template-areas:
+            "B B B B"
+            "A A A A"
+            "A A A A"
+            "C C C C";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="a">A</div>
+      <div class="b">B</div>
+      <div class="c">C</div>
+    </div>
+  </body>
+</html>

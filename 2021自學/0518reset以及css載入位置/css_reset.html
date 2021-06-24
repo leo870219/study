@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reset.css" />
+    <script src="index.js"></script>
+    <style>
+      #a {
+        font-size: 20px;
+      }
+      #b {
+        font-size: 1.1em;
+      }
+      #c {
+        font-size: 1.5rem;
+      }
+      hr{
+        margin:60px 0 0 0;
+      }
+      h1{
+        margin:10px 10px;
+        font-size: 30px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="a">
+      <p>我是父元素，20px</p>
+      <div id="b">
+        我是子元素，1.1em，透過「倍數」乘以父元素的 px 值，所以我是20px*1.1
+        =22px
+        <div id="c">
+          我是rem，1.5rem，透過「倍數」乘以根元素的 px
+          值，根元素代表html，預設16px，所以我是16px*1.5=24pxs
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p id="title">title</p>
+    <button onclick="changeTitle()">調整js載入位置後按我測試</button>
+    <hr />
+    <h1>title</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi iure
+      voluptate blanditiis porro incidunt, quidem pariatur excepturi magni
+      tempora voluptas accusamus doloremque quaerat cum. Hic aliquid esse quo
+      libero quis?
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio iste
+      molestias saepe. Amet dolor voluptates possimus debitis veniam obcaecati
+      optio unde quas quasi inventore, exercitationem eaque deleniti laudantium
+      culpa ipsum.
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio iste
+      molestias saepe. Amet dolor voluptates possimus debitis veniam obcaecati
+      optio unde quas quasi inventore, exercitationem eaque deleniti laudantium
+      culpa ipsum.
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio iste
+      molestias saepe. Amet dolor voluptates possimus debitis veniam obcaecati
+      optio unde quas quasi inventore, exercitationem eaque deleniti laudantium
+      culpa ipsum.
+    </p>
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+    </ul>
+
+    <ol>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+      <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, a?</li>
+    </ol>
+  </body>
+</html>

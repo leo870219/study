@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body {
+        background-color: darkslateblue;
+      }
+      .wrap {
+        width: 1200px;
+        margin: auto;
+      }
+
+      .timeline {
+        padding: 100px 0 200px;
+      }
+      .timeline::after {
+        content: "";
+        display: block;
+        height: 0;
+        width: 100%;
+        clear: both;
+      }
+      .timeline li {
+        box-sizing: border-box;
+        width: 50%;
+        padding: 20px 0;
+        position: relative;
+      }
+      .timeline li:nth-child(odd) {
+        float: left;
+        padding-right: 100px;
+      }
+      .timeline li:nth-child(even) {
+        float: right;
+        padding-left: 100px;
+        transform: translateY(50%);
+      }
+      .timeline li:nth-child(odd)::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        top: 0;
+        right: 0;
+        background-color: rgb(250, 250, 250);
+      }
+      .timeline li:last-child::after {
+        height: 50%;
+      }
+      .timeline li::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+      .timeline li:nth-child(odd)::before {
+        right: -10px;
+      }
+      .timeline li:nth-child(even)::before {
+        left: -10px;
+      }
+
+      .timeline a {
+        box-sizing: border-box;
+        display: block;
+        text-decoration: none;
+        color: cadetblue;
+        padding: 20px;
+        border: 1px solid #000;
+        background-color: rgba(226, 226, 226, 0.774);
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px #000;
+        transition: 0.3s;
+      }
+      .timeline a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100px;
+        height: 1px;
+        background-color: rgb(250, 250, 250);
+      }
+      .timeline li:nth-child(odd) a::before {
+        right: 0;
+      }
+      .timeline li:nth-child(even) a::before {
+        left: 0;
+      }
+      .timeline a:hover {
+        background-color: darkcyan;
+      }
+      .timeline a:hover h2,
+      .timeline a:hover p {
+        color: #fff;
+      }
+      .timeline h2 {
+        color: #333;
+      }
+      .timeline p {
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <ul class="timeline">
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><h2>title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+              iure omnis tenetur distinctio earum sed nam, autem, aliquam quam
+              porro quod. Itaque labore accusamus natus ab impedit incidunt
+              optio enim!
+            </p></a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

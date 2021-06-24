@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .title {
+        background-color: black;
+        color: cornflowerblue;
+        width: 300px;
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+      }
+      .content {
+        box-sizing: border-box;
+        background-color: rgb(94, 165, 94);
+        padding: 20px;
+        width: 300px;
+      }
+      .x {
+        display: none;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <a class="title text1">開/關</a>
+    <div class="content content1">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae eligendi
+      sit distinctio fugiat, nulla consectetur quaerat voluptate inventore,
+      deleniti beatae enim nihil ducimus nisi asperiores quisquam quidem quod
+      est molestiae?
+    </div>
+    <a class="title text2">開/關</a>
+    <div class="content content2">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae eligendi
+      sit distinctio fugiat, nulla consectetur quaerat voluptate inventore,
+      deleniti beatae enim nihil ducimus nisi asperiores quisquam quidem quod
+      est molestiae?
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $(".text1").click(() => {
+          $(".content1").slideToggle();
+        });
+        $(".text2").click(() => {
+          $(".content2").fadeToggle();
+        });
+      });
+    </script>
+  </body>
+</html>

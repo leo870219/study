@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+      header {
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+      }
+      .container {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main .container {
+        display: block;
+        width: 100%;
+        margin: auto;
+      }
+      header .container {
+        padding: 10px 0;
+      }
+      .header-logo {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100px;
+      }
+      .header-logo img {
+        width: 100%;
+        vertical-align: middle;
+      }
+      header nav {
+        margin: auto 20px;
+      }
+      header nav a {
+        padding: 10px 20px;
+        transition: 0.5s;
+        position: relative;
+      }
+      header nav a:hover {
+          color: rgb(219, 179, 179);
+        background-color: rgba(256, 256, 256, 0.3);
+      }
+
+      .header-search {
+        display: flex;
+      }
+      .header-search input,
+      .header-search button {
+        border: none;
+        padding: 5px 10px;
+      }
+
+      .header-search input {
+        border-radius: 10px 0 0 10px;
+        outline: none;
+      }
+      .header-search button {
+        border-radius: 0 10px 10px 0;
+        background-color: #fff;
+      }
+      .banner {
+        width: 100%;
+        height: 70vh;
+        background: linear-gradient(
+            120deg,
+            rgb(69, 108, 146) 50%,
+            transparent 50%
+          ),
+          url("https://picsum.photos/2000/800/?random=1") no-repeat right center /
+            auto 100%;
+        color: seashell;
+      }
+      .banner .container {
+        width: 100%;
+        max-width: 1440px;
+        margin: auto;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .banner-text h1 {
+        border-bottom: 1px solid rgb(228, 221, 221);
+        font-weight: 900;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
+      }
+      .banner-text h1 small {
+        display: block;
+        font-weight: 700;
+        padding-top: 0.3em;
+      }
+      .banner-text h2 {
+        font-weight: 700;
+      }
+      .banner-text p {
+        font-weight: 300;
+      }
+
+      .main .main-item {
+        padding: 50px 0;
+        width: 100%;
+        margin: auto;
+      }
+      .main .main-item-two {
+        background-color: #eee;
+      }
+      .main-text {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 50px;
+      }
+      .main-text h1 {
+        width: 100%;
+        margin-bottom: 20px;
+        position: relative;
+        display: flex;
+      }
+
+      .main-text h1:before,
+      .main-text h1:after {
+        content: "";
+        display: block;
+        width: 35%;
+        height: 3px;
+        background-color: #ddd;
+        margin: auto;
+      }
+      .main-text h1:before {
+        margin-right: 10px;
+      }
+      .main-text h1:after {
+        margin-left: 10px;
+      }
+      .main-item .wrap {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+      .main-item .wrap .item {
+        width: 100%;
+      }
+
+      .junior .item {
+        margin: 75px 10px 75px;
+        background-color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 10px solid rgb(54, 107, 128);
+      }
+      .junior .item:hover .icon i {
+        animation: shake 0.3s linear infinite alternate;
+      }
+      @keyframes shake {
+        0% {
+          transform: rotate(15deg);
+        }
+        100% {
+          transform: rotate(-15deg);
+        }
+      }
+      .senior .item {
+        width: 100%;
+        margin: 0 10px 75px;
+      }
+      .senior .item img {
+        width: 100%;
+        vertical-align: middle;
+        position: relative;
+      }
+      .senior .item {
+        background-color: ivory;
+        transition: transform 0.5s;
+      }
+      .senior .item .text {
+        position: relative;
+        padding: 10px 20px;
+      }
+      .senior .item .text::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+        border-top: 50px solid transparent;
+        border-left: 193px solid ivory;
+        border-right: 193px solid ivory;
+        transform: translateY(-100%);
+      }
+      .senior .item:hover {
+        transform: translateY(-30px);
+        background-color: rgb(144, 194, 228);
+      }
+      .senior .item:hover .text::before {
+        border-left: 193px solid rgb(144, 194, 228);
+        border-right: 193px solid rgb(144, 194, 228);
+      }
+      .senior .item:hover .text h2::after {
+        width: 100%;
+        height: 3px;
+      }
+      .senior .item .text h2 {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        position: relative;
+      }
+      .senior .item .text h2::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+        transition: 0.5s;
+      }
+
+      .junior .icon {
+        width: 150px;
+        height: 150px;
+        margin: -75px auto 0;
+        font-size: 65px;
+        background-color: #fff;
+        line-height: 150px;
+        border-radius: 50%;
+        position: relative;
+      }
+      .junior .icon::before {
+        content: "";
+        width: 99%;
+        height: 100%;
+        top: -10px;
+        left: -10px;
+        background-color: #fff;
+        position: absolute;
+        border-radius: 50%;
+        border-top: 10px solid rgb(54, 107, 128);
+        border-right: 10px solid rgb(54, 107, 128);
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        transform: rotate(-45deg);
+        z-index: -1;
+      }
+      .junior .text {
+        padding: 20px;
+      }
+      .main-item .experience {
+        margin-top: 75px;
+        justify-content: center;
+      }
+      .experience .item {
+        border: 1px solid rgb(92, 92, 92);
+        display: flex;
+        width: 368px;
+        margin: 15px;
+      }
+      .experience .pic {
+        width: 50%;
+      }
+      .experience img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+      }
+      .experience .text {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 50%;
+      }
+      .experience .btn {
+        margin-top: auto;
+        align-self: flex-end;
+        line-height: 1.5;
+        border: 1px solid rgb(177, 174, 174);
+        padding: 0 0.5em;
+        border-radius: 200px;
+        text-decoration: none;
+        color: rgb(177, 174, 174);
+        transition: all 0.3s;
+      }
+      .experience .btn:hover {
+        background-color: silver;
+        color: #fff;
+      }
+      .experience h3 {
+        padding-bottom: 0.5em;
+      }
+      footer {
+        background-color: rgb(54, 107, 128);
+        color: white;
+      }
+      footer .container {
+        padding: 50px 0;
+        align-items: flex-start;
+        text-align: left;
+        max-width: 1200px;
+      }
+      .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item nav {
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-item h4 {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        position: relative;
+      }
+      .footer-item h4::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: rgba(256, 256, 256, 0.3);
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+      }
+      .footer-item nav a + a {
+        margin-top: 10px;
+      }
+      .copyright {
+        background-color: rgb(38, 96, 119);
+        padding: 10px 0;
+        text-align: center;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-logo">
+          <a href=""> <img src="https://picsum.photos/300/200/?random=1" /></a>
+        </div>
+        <nav>
+          <a href="http://"> 防疫期間服務調整聲明</a>
+          <a href="http://"> 知識中心</a>
+          <a href="http://"> 銷售據點</a>
+          <a href="http://"> 聯絡客服</a>
+        </nav>
+        <div class="header-search">
+          <input type="search" name="" id="" />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <div class="banner">
+      <div class="container">
+        <div class="banner-text">
+          <h1>
+            阿憲前往BenQ的
+            <small>上班基礎之路</small>
+          </h1>
+          <h2>圖文滿版區塊</h2>
+          <p>來切一個<br />超級世界常見的版面</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <div class="main-item main-item-one">
+          <div class="main-text">
+            <h1>BenQ初階培訓課程</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              dolorum aspernatur consequatur autem voluptate, sit omnis vitae
+              corrupti aliquam illum provident est, veritatis cupiditate
+              eligendi, numquam amet deserunt repellat quo. Facere culpa aperiam
+              tempora? Sint voluptates, non laudantium quae necessitatibus aut.
+              Dignissimos voluptatibus similique corporis praesentium
+              perferendis commodi voluptatem voluptates consectetur delectus
+              optio harum laboriosam est dolor dolorum, recusandae nesciunt?
+              Impedit odit dolorem exercitationem eum necessitatibus deserunt!
+              Eaque repellendus impedit saepe ratione veritatis voluptatem
+              obcaecati repudiandae earum voluptatum doloribus, ducimus quae a
+              nisi eveniet culpa, maiores repellat ipsa. Sint, sit! Quos ullam
+              nesciunt placeat modi iure! Earum dolor fugiat tempore
+              necessitatibus fugit aspernatur esse natus nam, hic a quidem
+              quaerat similique numquam possimus rerum cumque?
+            </p>
+          </div>
+          <div class="wrap junior">
+            <div class="item">
+              <div class="icon"><i class="fas fa-socks"></i></div>
+              <div class="text">
+                <h2>title</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
+                  necessitatibus ullam mollitia nisi nesciunt aliquid voluptatum
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class="fas fa-briefcase"></i></div>
+              <div class="text">
+                <h2>title</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
+                  necessitatibus ullam mollitia nisi nesciunt aliquid voluptatum
+                  hic voluptas neque eligendi distinctio asperiores, doloremque
+                  corrupti. Inventore reprehenderit iusto optio obcaecati
+                  architecto?
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <div class="icon"><i class="fas fa-pen-square"></i></div>
+              <div class="text">
+                <h2>title</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
+                  necessitatibus ullam mollitia nisi nesciunt aliquid voluptatum
+                  hic voluptas neque eligendi distinctio asperiores, doloremque
+                  corrupti. Inventore reprehenderit iusto optio obcaecati
+                  architecto?
+                </p>
+              </div>
+            </div>
+          </div>
+          <h3>個人學習心得</h3>
+          <div class="wrap experience">
+            <div class="item">
+              <div class="pic">
+                <img src="https://picsum.photos/400/400/?random=2" />
+              </div>
+              <div class="text">
+                <h3>Lorem.</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quaerat dolore quod rerum praesentium natus minus officia
+                  distinctio inventore! Error fugit at suscipit? Repudiandae
+                  quas nisi neque ipsam facere modi animi.
+                </p>
+                <a href="#" class="btn">more</a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="pic">
+                <img src="https://picsum.photos/400/400/?random=3" />
+              </div>
+              <div class="text">
+                <h3>Lorem.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  illum totam earum placeat, at nobis velit possimus rem
+                  praesentium eligendi porro nesciunt a doloremque!
+                  Exercitationem blanditiis velit quod cupiditate voluptas?
+                </p>
+                <a href="#" class="btn">more</a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="pic">
+                <img src="https://picsum.photos/400/400/?random=4" />
+              </div>
+              <div class="text">
+                <h3>Lorem.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+                  ea aliquid enim eius animi ab iusto, nemo provident corporis
+                  tempore id excepturi. Quo, expedita! Consectetur, eaque
+                  doloremque. Eveniet, nihil enim.
+                </p>
+                <a href="#" class="btn">more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="main-item main-item-two">
+          <div class="main-text">
+            <h1>BenQ進階培訓課程</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
+              ducimus exercitationem pariatur inventore numquam labore,
+              quibusdam maiores vel nesciunt qui dicta obcaecati dolorum vitae.
+              Nulla minima dolores alias voluptatum minus?
+            </p>
+          </div>
+          <div class="wrap senior">
+            <div class="item">
+              <img src="https://picsum.photos/400/300/?random=1" />
+              <div class="text">
+                <h2>小新</h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Dolores error ipsam sit, sed sint, ex enim nobis soluta
+                  praesentium totam mollitia saepe eaque nesciunt autem amet rem
+                  cumque eum architecto. Quas commodi quis excepturi
+                  perspiciatis eum voluptatum nemo voluptas expedita
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="https://picsum.photos/400/300/?random=2" />
+              <div class="text">
+                <h2>風間</h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Dolores error ipsam sit, sed sint, ex enim nobis soluta
+                  praesentium totam mollitia saepe eaque nesciunt autem amet rem
+                  cumque eum architecto. Quas commodi quis excepturi
+                  perspiciatis eum voluptatum nemo voluptas expedita, vel
+                  accusantium quod ratione asperiores?
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="https://picsum.photos/400/300/?random=3" />
+              <div class="text">
+                <h2>小葵</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis, exercitationem necessitatibus, ratione totam
+                  impedit deleniti, accusamus natus perspiciatis voluptates
+                  excepturi eius magni est. Cumque aliquid quas veniam quos
+                  tempora at cupiditate sint ipsa ab ut odit natus laborum, quam
+                  aperiam atque facilis itaque ullam delectus.
+                </p>
+              </div>
+            </div>
+          </div>
+          <h3>個人學習心得</h3>
+          <div class="wrap experience">
+            <div class="item">
+              <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=2" />
+              </div>
+              <div class="text">
+                <h3>Lorem.</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quaerat dolore quod rerum praesentium natus minus officia
+                  distinctio inventore! Error fugit at suscipit? Repudiandae
+                  quas nisi neque ipsam facere modi animi.
+                </p>
+                <a href="#" class="btn">more</a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=3" />
+              </div>
+              <div class="text">
+                <h3>Lorem.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                  illum totam earum placeat, at nobis velit possimus rem
+                  praesentium eligendi porro nesciunt a doloremque!
+                  Exercitationem blanditiis velit quod cupiditate voluptas?
+                </p>
+                <a href="#" class="btn">more</a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="pic">
+                <img src="https://picsum.photos/300/200/?random=4" />
+              </div>
+              <div class="text">
+                <h3>Lorem.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
+                  ea aliquid enim eius animi ab iusto, nemo provident corporis
+                  tempore id excepturi. Quo, expedita! Consectetur, eaque
+                  doloremque. Eveniet, nihil enim.
+                </p>
+                <a href="#" class="btn">more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-item footer-form">
+          <h4>追蹤我們</h4>
+          <nav>
+            <a href="#">訂閱電子報</a>
+            <form action="">
+              <input type="text" />
+              <input type="submit" value="訂閱" />
+            </form>
+            <a href="http://"> 官方 Line 線上客服</a>
+            <a href="http://"> 加入官方 Facebook 粉絲團</a>
+            <a href="http://"> 訂閱官方 YouTube 頻道</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>BenQ Store</h4>
+          <nav>
+            <a href="#">尋找銷售據點</a>
+            <a href="#">最新優惠</a>
+            <a href="#">新聞與活動</a>
+            <a href="#">第一次購物就上手</a>
+            <a href="#">官網購物常見問題</a>
+            <a href="#">延長保固購買</a>
+            <a href="#">贈品兌換網站首頁</a>
+            <a href="#">福利品專區</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>支援服務</h4>
+          <nav>
+            <a href="">服務公告</a>
+            <a href="">產品註冊</a>
+            <a href="">保固條例</a>
+            <a href="">網路報修</a>
+            <a href="">檔案下載與常見問題</a>
+          </nav>
+        </div>
+        <div class="footer-item">
+          <h4>更多資訊</h4>
+          <nav>
+            <a href="">關於明基</a>
+            <a href="">知識中心</a>
+            <a href="">專業商用解決方案</a>
+            <a href="">ZOWIE e-Sports 電競產品</a>
+            <a href="">商展整合(租賃)服務</a>
+            <a href="">人才招募</a>
+            <a href="">明基基金會</a>
+          </nav>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright &copy 2020 BenQ - all rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>

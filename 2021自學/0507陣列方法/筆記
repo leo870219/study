@@ -1,0 +1,3 @@
+slice(取刪掉得值) vs splice(可隨意修/刪/改陣列)
+slice()不會改變原陣列；splice()會。
+slice()回傳指定切下來的陣列；splice()會回傳被刪除的陣列。
